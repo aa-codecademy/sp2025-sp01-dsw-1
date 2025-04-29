@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+
 /* General Reset */
 body, h1, h2, h3, p, a, img {
     margin: 0;
@@ -10,40 +11,39 @@ body, h1, h2, h3, p, a, img {
 
 /* Banner Section */
 .banner {
-    position: relative; /* Enable positioning for child elements */
+    position: relative;
     width: 100%;
-    height: 700px; /* Increased height for the banner */
-    background-color: #F9F9F9; /* Fallback background color */
-    overflow: hidden; /* Ensure no overflow from child elements */
+    height: 700px; /* Default height for larger screens */
+    background-color: #F9F9F9;
+    overflow: hidden;
 }
 
-/* Full-Screen Banner Image */
 .banner-image img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire banner */
-    z-index: 1; /* Place the image behind the text */
+    object-fit: cover;
+    z-index: 1;
 }
 
-/* Light Blue Text Container */
 .banner-text-container {
     position: absolute;
-    right: 60px; /* Position the container on the right */
+    right: 60px;
     top: 55%;
-    transform: translateY(-50%); /* Center vertically */
-    background-color: #DFE9F4; /* Light blue background */
+    transform: translateY(-50%);
+    background-color: #DFE9F4;
     padding: 30px;
     border-radius: 10px;
-    max-width: 600px; /* Limit the width of the text container */
-    min-height: 350px; /* Increase the height of the container */
-    z-index: 2; /* Place the text container above the image */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    max-width: 600px; /* Ensure the container width is limited */
+    min-height: 350px;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content from overflowing */
+    word-wrap: break-word; /* Ensure long words break to the next line */
 }
 
-/* Text and Button Inside the Container */
 .banner-text {
     display: flex;
     flex-direction: column;
@@ -51,40 +51,134 @@ body, h1, h2, h3, p, a, img {
 }
 
 .banner-subtitle {
-    font-size: 30px;
+    font-size: 28px; /* Slightly reduced font size */
     font-weight: bold;
-    color: #000000; /* Gray color */
+    color: #000000;
     margin-bottom: 10px;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    text-align: left; /* Align text properly within the container */
 }
 
 .banner-title {
     font-size: 80px;
     font-weight: bold;
-    color: #B68D40; /* Gold color */
+    color: #B68D40;
     margin-bottom: 20px;
 }
 
 .banner-description {
     font-size: 25px;
-    color: #333; /* Dark gray */
+    color: #333;
     margin-bottom: 30px;
 }
 
 .banner-button {
-    background-color: #B68D40; /* Gold color */
+    background-color: #B68D40;
     color: #FFF;
     border: none;
-    padding: 15px 30px; /* Increased padding for larger button */
-    font-size: 18px; /* Slightly larger font size */
+    padding: 15px 30px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 200px; /* Set a fixed width */
-    height: 60px; /* Set a fixed height */
-    text-align: center; /* Center the text inside the button */
+    width: 200px;
+    height: 60px;
+    text-align: center;
 }
 
 .banner-button:hover {
-    background-color: #A67C37; /* Darker gold on hover */
+    background-color: #A67C37;
 }
 
+/* Responsive Design for Banner */
+@media (max-width: 1024px) {
+    .banner {
+        height: 500px; /* Reduce banner height for medium screens */
+    }
+
+    .banner-text-container {
+        right: 30px; /* Reduce right margin */
+        max-width: 500px; /* Reduce text container width */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .banner-title {
+        font-size: 60px; /* Reduce title font size */
+    }
+
+    .banner-description {
+        font-size: 20px; /* Reduce description font size */
+    }
+
+    .banner-button {
+        width: 180px; /* Reduce button width */
+        height: 50px; /* Reduce button height */
+        font-size: 16px; /* Reduce button font size */
+    }
+
+    .banner-subtitle {
+        font-size: 24px; /* Adjust subtitle size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 400px; /* Further reduce banner height for small screens */
+    }
+
+    .banner-text-container {
+        right: 20px; /* Further reduce right margin */
+        max-width: 400px; /* Further reduce text container width */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .banner-title {
+        font-size: 40px; /* Further reduce title font size */
+    }
+
+    .banner-description {
+        font-size: 18px; /* Further reduce description font size */
+    }
+
+    .banner-button {
+        width: 160px; /* Further reduce button width */
+        height: 45px; /* Further reduce button height */
+        font-size: 14px; /* Further reduce button font size */
+    }
+
+    .banner-subtitle {
+        font-size: 20px; /* Adjust subtitle size for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 300px; /* Adjust banner height for very small screens */
+    }
+
+    .banner-text-container {
+        right: 10px; /* Minimal right margin */
+        max-width: 300px; /* Minimal text container width */
+        padding: 10px; /* Minimal padding */
+        top: 50px; /* Adjust top position to prevent overflow */
+        transform: none; /* Remove vertical centering for mobile */
+    }
+
+    .banner-title {
+        font-size: 30px; /* Minimal title font size */
+    }
+
+    .banner-description {
+        font-size: 16px; /* Minimal description font size */
+    }
+
+    .banner-button {
+        width: 140px; /* Minimal button width */
+        height: 40px; /* Minimal button height */
+        font-size: 12px; /* Minimal button font size */
+    }
+
+    .banner-subtitle {
+        font-size: 16px; /* Adjust subtitle size for very small screens */
+    }
+}

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Shop</title>
     <link rel="stylesheet" href="../styles/homepage.css">
+    <link rel="stylesheet" href="../styles/header.css">
 </head>
-
+<body>
     <section class="banner">
         <div class="banner-content">
             
@@ -31,6 +32,13 @@
 
     
 </body>
-
+<script>
+    fetch('./header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('afterbegin', data);
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
 
 </html>
