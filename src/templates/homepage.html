@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Shop</title>
     <link rel="stylesheet" href="../styles/homepage.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
-
+<body>
     <section class="banner">
         <div class="banner-content">
             
@@ -28,9 +29,14 @@
             </div>
         </div>
     </section>
-
-    
 </body>
-
+<script>
+    fetch('./footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Error loading footer:', error));
+</script>
 
 </html>
