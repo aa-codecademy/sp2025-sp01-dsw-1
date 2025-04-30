@@ -55,19 +55,6 @@
     <div class="product-grid">
     </div>
 </section>
-
-<script src="../scripts/homepage.js"></script>
-<script>
-       const loadHTML = (url, position) => {
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.body.insertAdjacentHTML(position, data);
-                })
-                .catch(error => console.error(`Error loading ${url}:`, error));
-        };
-        loadHTML('./header.html', 'afterbegin');
-        loadHTML('./footer.html', 'beforeend');
-</script>
+<script type="module" src="../scripts/homepage.js"></script>
 </body>
 </html>

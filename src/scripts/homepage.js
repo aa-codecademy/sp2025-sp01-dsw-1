@@ -1,3 +1,5 @@
+import { loadHTML } from '../scripts/utils.js';
+
 const productGrid = document.querySelector(".product-grid");
 fetch("../assets/products.json")
   .then((response) => response.json())
@@ -55,3 +57,6 @@ fetch("../assets/products.json")
     });
   })
   .catch((error) => console.error("Error fetching product data:", error));
+
+loadHTML('../templates/header.html', 'afterbegin'); 
+loadHTML('../templates/footer.html', 'beforeend');
