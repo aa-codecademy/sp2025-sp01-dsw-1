@@ -13,7 +13,8 @@
                 "../assets/images/living-room/Syltherine-1.png",
                 "../assets/images/living-room/Syltherine-2.png"
             ],
-            "stock": 11
+            "stock": 11,
+            "IsMostPopular": true
         },
         {
             "id": 2,
@@ -26,7 +27,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Leviosa.png"
             ],
-            "stock": 8
+            "stock": 8,
+            "IsMostPopular": false
         },
         {
             "id": 3,
@@ -39,7 +41,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Lolito.png"
             ],
-            "stock": 5
+            "stock": 5,
+            "IsMostPopular": false
         },
         {
             "id": 4,
@@ -52,7 +55,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Respira.png"
             ],
-            "stock": 15
+            "stock": 15,
+            "IsMostPopular": true
         },
         {
             "id": 5,
@@ -65,7 +69,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Grifo.png"
             ],
-            "stock": 20
+            "stock": 20,
+            "IsMostPopular": true
         },
         {
             "id": 6,
@@ -78,7 +83,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Muggo.png"
             ],
-            "stock": 50
+            "stock": 50,
+            "IsMostPopular": true
         },
         {
             "id": 7,
@@ -91,7 +97,8 @@
             "imageUrl": [
                 "../assets/images/living-room/Pingky.png"
             ],
-            "stock": 3
+            "stock": 3,
+            "IsMostPopular": true
         },
         {
             "id": 8,
@@ -104,7 +111,92 @@
             "imageUrl": [
                 "../assets/images/living-room/Potty.png"
             ],
-            "stock": 25
+            "stock": 25,
+            "IsMostPopular": true
+        },
+        {
+            "id": 9,
+            "name": "Beletto",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Beletto.png",
+            "description": "Wooden Nightstand",
+            "imageUrl": [
+                "../assets/images/bedroom/Beletto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 10,
+            "name": "Childretto",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Childretto.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Childretto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 11,
+            "name": "Rumstando",
+            "category": "bedroom",
+            "price": "Rp 7,000,000",
+            "discount": "Rp 14,000,000",
+            "image": "../assets/images/bedroom/Rumstando.png",
+            "description": "White Nightstand",
+            "imageUrl": [
+                "../assets/images/bedroom/Rumstando.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 12,
+            "name": "Kitchenetto",
+            "category": "dining-room",
+            "price": "Rp 7,000,000",
+            "discount": "Rp 14,000,000",
+            "image": "../assets/images/dining-room/Kitchenetto.png",
+            "description": "Wooden Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Kitchenetto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 13,
+            "name": "Lambeto",
+            "category": "dining-room",
+            "price": "Rp 7,000,000",
+            "discount": "Rp 14,000,000",
+            "image": "../assets/images/dining-room/Lambeto.png",
+            "description": "Dining Table Lamp",
+            "imageUrl": [
+                "../assets/images/dining-room/Lambeto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 14,
+            "name": "Trapezaretto",
+            "category": "dining-room",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Trapezaretto.png",
+            "description": "Green Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Trapezaretto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
         }
     ]
   }
