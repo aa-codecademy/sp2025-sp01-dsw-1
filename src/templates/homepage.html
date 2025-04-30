@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Shop</title>
     <link rel="stylesheet" href="../styles/homepage.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
+<body>
 <section class="banner">
     <div class="banner-content">
         <div class="banner-image">
@@ -52,6 +55,19 @@
     <div class="product-grid">
     </div>
 </section>
-</body>
+
 <script src="../scripts/homepage.js"></script>
+<script>
+       const loadHTML = (url, position) => {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML(position, data);
+                })
+                .catch(error => console.error(`Error loading ${url}:`, error));
+        };
+        loadHTML('./header.html', 'afterbegin');
+        loadHTML('./footer.html', 'beforeend');
+</script>
+</body>
 </html>
