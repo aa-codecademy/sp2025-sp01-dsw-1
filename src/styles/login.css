@@ -111,3 +111,18 @@ body {
 .login-button:hover {
     background-color: #A67C37;
 }
+
+.register-link {
+    display: block;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0000EE;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    color: #b68d40;
+}
