@@ -1,0 +1,128 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.header-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+}
+
+.header-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.login-container {
+    width: 820px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.login-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+    width: 100%;
+    max-width: 680px;
+}
+
+.login-form input {
+    width: 100%;
+    max-width: 680px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #9F9F9F;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #b68d40;
+}
+
+.login-button {
+    width: 300px;
+    height: 60px;
+    margin-top: 20px;
+    background-color: #B88E2F;
+    color: #fff;
+    border: 1px solid #B88E2F;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #A67C37;
+}
+
+.register-link {
+    display: block;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0000EE;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    color: #b68d40;
+}
