@@ -1,0 +1,163 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.header-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.header-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+}
+
+.header-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.register-container {
+    width: 820px; 
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.register-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    text-align: left;
+    width: 100%;
+    max-width: 680px;
+}
+
+.register-form input {
+    width: 100%;
+    max-width: 680px;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px; 
+    border: 1px solid #9F9F9F;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.register-form input:focus {
+    border-color: #b68d40;
+}
+
+.register-button {
+    width: 300px;
+    height: 60px;
+    margin-top: 20px;
+    background-color: #B88E2F;
+    color: #fff;
+    border: 1px solid #B88E2F;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #A67C37;
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .register-container {
+        width: 90%;
+    }
+
+    .register-form input {
+        height: 70px;
+    }
+
+    .register-button {
+        width: 250px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .register-form input {
+        height: 60px;
+    }
+
+    .register-button {
+        width: 200px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding: 10px;
+    }
+
+    .register-form input {
+        height: 50px;
+    }
+
+    .register-button {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
