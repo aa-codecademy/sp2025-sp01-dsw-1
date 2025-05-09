@@ -197,6 +197,413 @@
             ],
             "stock": 4,
             "IsMostPopular": true
+        },
+        {
+            "id": 15,
+            "name": "Rico-Ottoman",
+            "category": "living-room",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico-Ottoman.png",
+            "description": "Nice Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Rico-Ottoman.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 16,
+            "name": "Rico-2",
+            "category": "living-room",
+            "price": "Rp 600,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico-2.png",
+            "description": "Good Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Rico-2.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 17,
+            "name": "Catena",
+            "category": "living-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Catena.png",
+            "description": "Confortable Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Catena.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": false
+        },
+        {
+            "id": 18,
+            "name": "Catena-2",
+            "category": "living-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Catena-2.png",
+            "description": "Foam Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Catena-2.png"
+            ],
+            "stock": 5,
+            "IsMostPopular": false
+        },
+        {
+            "id": 19,
+            "name": "Sand/black",
+            "category": "living-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Sandblack.png",
+            "description": "Black and White Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Sandblack.png"
+            ],
+            "stock": 3,
+            "IsMostPopular": false
+        },
+        {
+            "id": 20,
+            "name": "Nesten-Lounge-Chair",
+            "category": "living-room",
+            "price": "Rp 200,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Nesten-Lounge-Chair.png",
+            "description": "Soft Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Nesten-Lounge-Chair.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": true
+        },
+        {
+            "id": 21,
+            "name": "Buur-Lounge-Chair",
+            "category": "dining-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Buur-Lounge-Chair.png",
+            "description": "Soft Green Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Buur-Lounge-Chair.png"
+            ],
+            "stock": 3,
+            "IsMostPopular": true
+        },
+        {
+            "id": 22,
+            "name": "Rouli-Center-Module",
+            "category": "living-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Rouli-Center-Module.png",
+            "description": "Soft Green Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Rouli-Center-Module.png"
+            ],
+            "stock": 31,
+            "IsMostPopular": false
+        },
+        {
+            "id": 23,
+            "name": "Rico",
+            "category": "living-room",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico.png",
+            "description": "Soft Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Rico.png"
+            ],
+            "stock": 2,
+            "IsMostPopular": false
+        },
+        {
+            "id": 24,
+            "name": "Wooden",
+            "category": "dining-room",
+            "price": "Rp 5,000,000",
+            "discount": "Rp 2,000,000",
+            "image": "../assets/images/dining-room/Wooden.png",
+            "description": "Dining Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Wooden.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 25,
+            "name": "Black-widow",
+            "category": "dining-room",
+            "price": "Rp 5,000,000",
+            "discount": "Rp 2,000,000",
+            "image": "../assets/images/dining-room/Black-widow.png",
+            "description": "Dining Black Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Black-widow.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 26,
+            "name": "Elegant",
+            "category": "dining-room",
+            "price": "Rp 2,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Elegant.png",
+            "description": "Dining Good Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Elegant.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 27,
+            "name": "Sandblack",
+            "category": "dining-room",
+            "price": "Rp 2,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Sandblack.png",
+            "description": "Black and white chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Sandblack.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 28,
+            "name": "Rico",
+            "category": "dining-room",
+            "price": "Rp 2,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Rico.png",
+            "description": "Elegant chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Rico.png"
+            ],
+            "stock": 10,
+            "IsMostPopular": false
+        },
+        {
+            "id": 29,
+            "name": "Aukko ",
+            "category": "dining-room",
+            "price": "Rp 5,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Aukko.png",
+            "description": "Wooden Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Aukko.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": false
+        },
+        {
+            "id": 30,
+            "name": "Oar Coffee",
+            "category": "dining-room",
+            "price": "Rp 5,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/OarCoffee.png",
+            "description": "Wooden Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/OarCoffee.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": false
+        },
+        {
+            "id": 31,
+            "name": "Burl-Coffee",
+            "category": "dining-room",
+            "price": "Rp 5,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Burl-Coffee.png",
+            "description": "Good Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Burl-Coffee.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": false
+        },
+        {
+            "id": 32,
+            "name": "Staffa-Coffee",
+            "category": "dining-room",
+            "price": "Rp 3,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Staffa-Coffee.png",
+            "description": "Coffe Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Staffa-Coffee.png"
+            ],
+            "stock": 10,
+            "IsMostPopular": true
+        },
+        {
+            "id": 33,
+            "name": "Pylo-Console",
+            "category": "dining-room",
+            "price": "Rp 3,000,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Pylo-Console.png",
+            "description": "Small Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Pylo-Console.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": true
+        },
+        {
+            "id": 34,
+            "name": "Tarva",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Tarva.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Tarva.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 35,
+            "name": "Malm",
+            "category": "bedroom",
+            "price": "Rp 300,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Malm.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Malm.png"
+            ],
+            "stock": 42,
+            "IsMostPopular": false
+        },
+        {
+            "id": 36,
+            "name": "Retro",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Retro.png",
+            "description": "King Size Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Retro.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 37,
+            "name": "Slatino",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Slatino.png",
+            "description": "Old Timer",
+            "imageUrl": [
+                "../assets/images/bedroom/Slatino.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 38,
+            "name": "Brimnes",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Brimnes.png",
+            "description": "Brimnes Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Brimnes.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": true
+        },
+        {
+            "id": 39,
+            "name": "Nordli",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Nordli.png",
+            "description": "Nordli  Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Nordli.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 40,
+            "name": "Idanas",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Idanas.png",
+            "description": "Idanas Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Idanas.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 41,
+            "name": "Vitrina",
+            "category": "bedroom",
+            "price": "Rp 200,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Vitrina.png",
+            "description": "Vitrina's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Vitrina.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 42,
+            "name": "Talasi",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Talasi.png",
+            "description": "Talasi's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Talasi.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": true
+        },
+        {
+            "id": 43,
+            "name": "Utaker",
+            "category": "bedroom",
+            "price": "Rp 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Utaker.png",
+            "description": "Utaker's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Utaker.png"
+            ],
+            "stock": 5,
+            "IsMostPopular": false
         }
     ]
   }
+  

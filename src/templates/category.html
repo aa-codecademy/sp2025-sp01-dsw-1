@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category Page</title>
+    <link rel="stylesheet" href="/src/styles/category.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <section class="header-image">
+          <img
+            src="../assets/banner.png"
+            alt="Header Background"
+            class="header-background"
+          />
+          <div class="header-overlay">
+            <img
+              src="../assets/images/navigation_bar/logo.png"
+              alt="Logo"
+              class="header-logo"
+            />
+            <h1 class="header-title">Category</h1>
+          </div>
+        </section>
+
+        <section class="categories">
+          <h2 class="section-title">Categories</h2>
+          <div class="categories-container">
+            <div class="category-item">
+              <a href="#" id="dining-room-btn">
+                <img
+                  src="../assets/images/Dining-room.png"
+                  alt="Dining"
+                  class="category-image"
+                />
+                <p class="category-name">Dining</p>
+              </a>
+            </div>
+            <div class="category-item">
+              <a href="#" id="living-room-btn">
+                <img
+                  src="../assets/images/Living-room.png"
+                  alt="Living"
+                  class="category-image"
+                />
+                <p class="category-name">Living</p>
+              </a>
+            </div>
+            <div class="category-item">
+              <a href="#" id="bedroom-btn">
+                <img
+                  src="../assets/images/Bedroom.png"
+                  alt="Bedroom"
+                  class="category-image"
+                />
+                <p class="category-name">Bedroom</p>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="filter-wraper">
+          <div class="filter-dropdown">
+            <span>Filter</span>
+            <div class="dropdown-content">
+              <button>Stock</button>
+              <button>Diningroom</button>
+              <button>Livingroom</button>
+              <button>Bedroom</button>
+            </div>
+          </div>
+
+          <div class="sort-dropdown">
+            <span>Sort by:</span>
+            <div class="sort-content">
+              <button>a-z</button>
+              <button>z-a</button>
+              <button>low price first</button>
+              <button>low price first</button>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <!-- Images and products -->
+        </section>
+        <section class="all-products">
+          <div class="product-grid"></div>
+        </section>
+
+        <div id="pagination" class="pagination-buttons">
+          <a href="category.html" class="active">1</a>
+          <a href="">2</a>
+          <a href="">3</a>
+          <a href="page4.html">Next</a>
+        </div>
+      </main>
+
+      <script type="module" src="/src/scripts/category.js"></script>
+    </div>
+  </body>
+</html>
