@@ -5,98 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Category Page</title>
     <link rel="stylesheet" href="/src/styles/category.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
   </head>
   <body>
     <div class="container">
       <main>
         <section class="banner">
-            <!-- banner -->
+          <!-- banner -->
           <h3 id="topic">Category</h3>
         </section>
 
-        <section>
-          <!-- thre categories -->
-          <h3 id="text">Categories</h3>
-          <div class="categories">
-            <div class="img">
-                <a href="">
-              <img
-                src="/src/assets/images/diningroom/dinning-room.png"
-                alt="diningroom image"
-                width="300px"
-                height="400px"
-              />
-                </a>
-              <button class="btn">Dining</button>
+        <section class="categories">
+          <h2 class="section-title">Categories</h2>
+          <div class="categories-container">
+            <div class="category-item">
+              <a href="#" id="dining-room-btn">
+                <img
+                  src="../assets/images/Dining-room.png"
+                  alt="Dining"
+                  class="category-image"
+                />
+                <p class="category-name">Dining</p>
+              </a>
             </div>
-            <a href="">
-            <div class="img">
-              <img
-                src="/src/assets/images/livingroom/living-room.png"
-                alt="livingroom image"
-                width="300px"
-                height="400px"
-              />
-            </a>
-              <button class="btn">Living</button>
+            <div class="category-item">
+              <a href="#" id="living-room-btn">
+                <img
+                  src="../assets/images/Living-room.png"
+                  alt="Living"
+                  class="category-image"
+                />
+                <p class="category-name">Living</p>
+              </a>
             </div>
-            <a href="">
-            <div class="img">
-              <img
-                src="/src/assets/images/bedroom/bedroom.png"
-                alt="bedroom image"
-                width="300px"
-                height="400px"
-              />
-            </a>
-              <button class="btn">Bedroom</button>
+            <div class="category-item">
+              <a href="#" id="bedroom-btn">
+                <img
+                  src="../assets/images/Bedroom.png"
+                  alt="Bedroom"
+                  class="category-image"
+                />
+                <p class="category-name">Bedroom</p>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="filter-wraper">
+          <div class="filter-dropdown">
+            <span>Filter</span>
+            <div class="dropdown-content">
+              <button>Stock</button>
+              <button>Diningroom</button>
+              <button>Livingroom</button>
+              <button>Bedroom</button>
+            </div>
+          </div>
+
+          <div class="sort-dropdown">
+            <span>Sort by:</span>
+            <div class="sort-content">
+              <button>a-z</button>
+              <button>z-a</button>
+              <button>low price first</button>
+              <button>low price first</button>
             </div>
           </div>
         </section>
 
-        <section class="filter-wraper">
-          <!-- filter and sorting -->
-           
-               <div class="filter-dropdown">
-                <span>Filter</span>
-                <div class="dropdown-content">
-                    <button>Stock</button>
-                    <button>Diningroom</button>
-                    <button>Livingroom</button>
-                    <button>Bedroom</button>
-                </div>
-            </div>
-
-            
-                <div class="sort-dropdown">
-                 <span>Sort by:</span>
-                 <div class="sort-content">
-                     <button>a-z</button>
-                     <button>z-a</button>
-                     <button>low price first</button>
-                     <button>low price first</button>
-                 </div>
-             </div>
-           
-        </section>
-
         <section>
-            <!-- Images and products -->
-
+          <!-- Images and products -->
+        </section>
+        <section class="all-products">
+          <div class="product-grid"></div>
         </section>
 
-        <div class="pagination">
-          <!-- pagination -->
+        <div id="pagination" class="pagination-buttons">
           <a href="category.html" class="active">1</a>
           <a href="">2</a>
           <a href="">3</a>
           <a href="page4.html">Next</a>
         </div>
       </main>
-
-     
 
       <script type="module" src="/src/scripts/category.js"></script>
     </div>
