@@ -207,7 +207,9 @@
             "image": "../assets/images/living-room/Rico-Ottoman.png",
             "description": "Nice Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Rico-Ottoman.png"
+                "../assets/images/living-room/Rico-Ottoman.png",
+                "../assets/images/living-room/Rico-Ottoman-2.png",
+                "../assets/images/living-room/Rico-Ottoman-3.png"
             ],
             "stock": 4,
             "IsMostPopular": true
@@ -221,21 +223,25 @@
             "image": "../assets/images/living-room/Rico-2.png",
             "description": "Good Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Rico-2.png"
+                "../assets/images/living-room/Rico-2.png",
+                "../assets/images/living-room/Rico-2-2.png",
+                "../assets/images/living-room/Rico-2-3.png"
             ],
             "stock": 1,
             "IsMostPopular": false
         },
         {
             "id": 17,
-            "name": "Catena",
+            "name": "Catena-1",
             "category": "living-room",
             "price": "Rp 300,000",
             "discount": null,
-            "image": "../assets/images/living-room/Catena.png",
+            "image": "../assets/images/living-room/Catena-1.png",
             "description": "Confortable Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Catena.png"
+                "../assets/images/living-room/Catena-1.png",
+                "../assets/images/living-room/Catena-1-2.png",
+                "../assets/images/living-room/Catena-1-3.png"
             ],
             "stock": 0,
             "IsMostPopular": false
@@ -249,7 +255,9 @@
             "image": "../assets/images/living-room/Catena-2.png",
             "description": "Foam Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Catena-2.png"
+                "../assets/images/living-room/Catena-2.png",
+                "../assets/images/living-room/Catena-2-2.png",
+                "../assets/images/living-room/Catena-2-3.png"
             ],
             "stock": 5,
             "IsMostPopular": false
@@ -263,7 +271,9 @@
             "image": "../assets/images/living-room/Sandblack.png",
             "description": "Black and White Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Sandblack.png"
+                "../assets/images/living-room/Sandblack.png",
+                "../assets/images/living-room/Sandblack-2.png",
+                "../assets/images/living-room/Sandblack-3.png"
             ],
             "stock": 3,
             "IsMostPopular": false
@@ -277,7 +287,9 @@
             "image": "../assets/images/living-room/Nesten-Lounge-Chair.png",
             "description": "Soft Chair",
             "imageUrl": [
-                "../assets/images/living-room/Nesten-Lounge-Chair.png"
+                "../assets/images/living-room/Nesten-Lounge-Chair.png",
+                "../assets/images/living-room/Nesten-Lounge-Chair-2.png",
+                "../assets/images/living-room/Nesten-Lounge-Chair-3.png"
             ],
             "stock": 13,
             "IsMostPopular": true
@@ -285,12 +297,14 @@
         {
             "id": 21,
             "name": "Buur-Lounge-Chair",
-            "category": "dining-room",
+            "category": "living-room",
             "price": "Rp 300,000",
             "discount": null,
             "image": "../assets/images/living-room/Buur-Lounge-Chair.png",
             "description": "Soft Green Chair",
             "imageUrl": [
+                "../assets/images/living-room/Buur-Lounge-Chair.png",
+                "../assets/images/living-room/Buur-Lounge-Chair.png",
                 "../assets/images/living-room/Buur-Lounge-Chair.png"
             ],
             "stock": 3,
@@ -305,7 +319,9 @@
             "image": "../assets/images/living-room/Rouli-Center-Module.png",
             "description": "Soft Green Chair",
             "imageUrl": [
-                "../assets/images/living-room/Rouli-Center-Module.png"
+                "../assets/images/living-room/Rouli-Center-Module.png",
+                "../assets/images/living-room/Rouli-Center-Module-2.png",
+                "../assets/images/living-room/Rouli-Center-Module-3.png"
             ],
             "stock": 31,
             "IsMostPopular": false
@@ -319,7 +335,9 @@
             "image": "../assets/images/living-room/Rico.png",
             "description": "Soft Chair",
             "imageUrl": [
-                "../assets/images/living-room/Rico.png"
+                "../assets/images/living-room/Rico.png",
+                "../assets/images/living-room/Rico-1.png",
+                "../assets/images/living-room/Rico-3.png"
             ],
             "stock": 2,
             "IsMostPopular": false
@@ -333,7 +351,9 @@
             "image": "../assets/images/dining-room/Wooden.png",
             "description": "Dining Chair",
             "imageUrl": [
-                "../assets/images/dining-room/Wooden.png"
+                "../assets/images/dining-room/Wooden.png",
+                "../assets/images/dining-room/Wooden-2.png",
+                "../assets/images/dining-room/Wooden-3.png"
             ],
             "stock": 4,
             "IsMostPopular": true
@@ -347,7 +367,9 @@
             "image": "../assets/images/dining-room/Black-widow.png",
             "description": "Dining Black Chair",
             "imageUrl": [
-                "../assets/images/dining-room/Black-widow.png"
+                "../assets/images/dining-room/Black-widow.png",
+                "../assets/images/dining-room/Black-widow-2.png",
+                "../assets/images/dining-room/Black-widow-3.png"
             ],
             "stock": 1,
             "IsMostPopular": false
@@ -361,7 +383,9 @@
             "image": "../assets/images/dining-room/Elegant.png",
             "description": "Dining Good Chair",
             "imageUrl": [
-                "../assets/images/dining-room/Elegant.png"
+                "../assets/images/dining-room/Elegant.png",
+                "../assets/images/dining-room/Elegant-2.png",
+                "../assets/images/dining-room/Elegant-3.png"
             ],
             "stock": 4,
             "IsMostPopular": false
@@ -375,7 +399,9 @@
             "image": "../assets/images/dining-room/Sandblack.png",
             "description": "Black and white chair",
             "imageUrl": [
-                "../assets/images/dining-room/Sandblack.png"
+                "../assets/images/dining-room/Sandblack.png",
+                 "../assets/images/dining-room/Sandblack-2.png",
+                  "../assets/images/dining-room/Sandblack-3.png"
             ],
             "stock": 1,
             "IsMostPopular": false
@@ -389,7 +415,9 @@
             "image": "../assets/images/dining-room/Rico.png",
             "description": "Elegant chair",
             "imageUrl": [
-                "../assets/images/dining-room/Rico.png"
+                "../assets/images/dining-room/Rico.png",
+                "../assets/images/dining-room/Rico-2.png",
+                "../assets/images/dining-room/Rico-3.png"
             ],
             "stock": 10,
             "IsMostPopular": false
@@ -403,7 +431,9 @@
             "image": "../assets/images/dining-room/Aukko.png",
             "description": "Wooden Dining Table",
             "imageUrl": [
-                "../assets/images/dining-room/Aukko.png"
+                "../assets/images/dining-room/Aukko.png",
+                "../assets/images/dining-room/Aukko-2.png",
+                "../assets/images/dining-room/Aukko-3.png"
             ],
             "stock": 13,
             "IsMostPopular": false
@@ -417,7 +447,9 @@
             "image": "../assets/images/dining-room/OarCoffee.png",
             "description": "Wooden Dining Table",
             "imageUrl": [
-                "../assets/images/dining-room/OarCoffee.png"
+                "../assets/images/dining-room/OarCoffee.png",
+                "../assets/images/dining-room/OarCoffee-2.png",
+                "../assets/images/dining-room/OarCoffee-3.png"
             ],
             "stock": 13,
             "IsMostPopular": false
@@ -445,7 +477,9 @@
             "image": "../assets/images/dining-room/Staffa-Coffee.png",
             "description": "Coffe Table",
             "imageUrl": [
-                "../assets/images/dining-room/Staffa-Coffee.png"
+                "../assets/images/dining-room/Staffa-Coffee.png",
+                "../assets/images/dining-room/Staffa-Coffee-2.png",
+                "../assets/images/dining-room/Staffa-Coffee-3.png"
             ],
             "stock": 10,
             "IsMostPopular": true
@@ -459,7 +493,9 @@
             "image": "../assets/images/dining-room/Pylo-Console.png",
             "description": "Small Table",
             "imageUrl": [
-                "../assets/images/dining-room/Pylo-Console.png"
+                "../assets/images/dining-room/Pylo-Console.png",
+                "../assets/images/dining-room/Pylo-Console-2.png",
+                "../assets/images/dining-room/Pylo-Console-3.png"
             ],
             "stock": 1,
             "IsMostPopular": true
@@ -473,7 +509,9 @@
             "image": "../assets/images/bedroom/Tarva.png",
             "description": "Children's Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Tarva.png"
+                "../assets/images/bedroom/Tarva.png",
+                "../assets/images/bedroom/Tarva-2.png",
+                "../assets/images/bedroom/Tarva-3.png"
             ],
             "stock": 4,
             "IsMostPopular": true
@@ -487,7 +525,9 @@
             "image": "../assets/images/bedroom/Malm.png",
             "description": "Children's Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Malm.png"
+                "../assets/images/bedroom/Malm.png",
+                "../assets/images/bedroom/Malm-2.png",
+                "../assets/images/bedroom/Malm-3.png"
             ],
             "stock": 42,
             "IsMostPopular": false
@@ -501,7 +541,9 @@
             "image": "../assets/images/bedroom/Retro.png",
             "description": "King Size Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Retro.png"
+                "../assets/images/bedroom/Retro.png",
+                "../assets/images/bedroom/Retro-2.png",
+                "../assets/images/bedroom/Retro-3.png"
             ],
             "stock": 4,
             "IsMostPopular": false
@@ -529,7 +571,9 @@
             "image": "../assets/images/bedroom/Brimnes.png",
             "description": "Brimnes Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Brimnes.png"
+                "../assets/images/bedroom/Brimnes.png",
+                "../assets/images/bedroom/Brimnes-2.png",
+                "../assets/images/bedroom/Brimnes-3.png"
             ],
             "stock": 1,
             "IsMostPopular": true
@@ -543,7 +587,9 @@
             "image": "../assets/images/bedroom/Nordli.png",
             "description": "Nordli  Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Nordli.png"
+                "../assets/images/bedroom/Nordli.png",
+                "../assets/images/bedroom/Nordli-2.png",
+                "../assets/images/bedroom/Nordli-3.png"
             ],
             "stock": 4,
             "IsMostPopular": false
@@ -557,7 +603,9 @@
             "image": "../assets/images/bedroom/Idanas.png",
             "description": "Idanas Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Idanas.png"
+                "../assets/images/bedroom/Idanas.png",
+                "../assets/images/bedroom/Idanas-2.png",
+                "../assets/images/bedroom/Idanas-3.png"
             ],
             "stock": 4,
             "IsMostPopular": false
@@ -571,7 +619,9 @@
             "image": "../assets/images/bedroom/Vitrina.png",
             "description": "Vitrina's Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Vitrina.png"
+                "../assets/images/bedroom/Vitrina.png",
+                "../assets/images/bedroom/Vitrina-2.png",
+                "../assets/images/bedroom/Vitrina-3.png"
             ],
             "stock": 4,
             "IsMostPopular": true
@@ -585,7 +635,9 @@
             "image": "../assets/images/bedroom/Talasi.png",
             "description": "Talasi's Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Talasi.png"
+                "../assets/images/bedroom/Talasi.png",
+                "../assets/images/bedroom/Talasi-2.png",
+                "../assets/images/bedroom/Talasi-3.png"
             ],
             "stock": 0,
             "IsMostPopular": true
@@ -599,7 +651,9 @@
             "image": "../assets/images/bedroom/Utaker.png",
             "description": "Utaker's Bed",
             "imageUrl": [
-                "../assets/images/bedroom/Utaker.png"
+                "../assets/images/bedroom/Utaker.png",
+                "../assets/images/bedroom/Utaker-2.png",
+                "../assets/images/bedroom/Utaker-3.png"
             ],
             "stock": 5,
             "IsMostPopular": false
