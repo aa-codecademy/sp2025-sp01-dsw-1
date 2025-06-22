@@ -232,10 +232,10 @@
             "category": "living-room",
             "price": "Rp 300,000",
             "discount": null,
-            "image": "../assets/images/living-room/Catena.png",
+            "image": "../assets/images/living-room/Catena-1.png",
             "description": "Confortable Sofa",
             "imageUrl": [
-                "../assets/images/living-room/Catena.png"
+                "../assets/images/living-room/Catena-1.png"
             ],
             "stock": 0,
             "IsMostPopular": false
