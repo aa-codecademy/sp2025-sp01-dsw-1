@@ -3,16 +3,21 @@ import { loadHTML } from "./utils.js";
 loadHTML("../templates/header.html", "afterbegin");
 loadHTML("../templates/footer.html", "beforeend");
 
-async function fetchProducts() {
-  const response = await fetch("../assets/products.json");
-  const data = await response.json();
-  return data.products;
-}
+const productGrid = document.querySelector(".product-grid");
+const paginationContainer = document.getElementById("pagination");
 
-function renderProducts(products) {
-  const grid = document.querySelector(".product-grid");
-  grid.innerHTML = "";
-  products.forEach((product) => {
+const productsPerPage = 16;
+let allProducts = [];
+let filteredProducts = [];
+
+function renderProducts(page) {
+  productGrid.innerHTML = "";
+
+  const start = (page - 1) * productsPerPage;
+  const end = start + productsPerPage;
+  const productsToShow = filteredProducts.slice(start, end);
+
+  productsToShow.forEach((product) => {
     let badgeHTML = "";
     if (product.discount) {
       const discountPercentage = Math.round(
@@ -25,44 +30,35 @@ function renderProducts(products) {
     } else {
       badgeHTML = `<div class="product-badge new">New</div>`;
     }
-    grid.innerHTML += `
-      <div class="product-card" data-product-id="${product.id}">
-        ${badgeHTML}
-        <img src="${product.image}" alt="${product.name}" class="product-image">
-        <div class="product-info">
-          <p class="product-name">${product.name}</p>
-          <p class="product-description">${product.description}</p>
-          <p class="product-price">
-            ${product.price}
-            ${
-              product.discount
-                ? `<span class="product-discount">${product.discount}</span>`
-                : ""
-            }
-          </p>
-        </div>
-        <button class="add-to-cart">Add to Cart</button>
-        <div class="product-links">
-          <a href="#" class="product-link">
-            <img src="../assets/Frame 11.png" alt="Share" class="product-icon">
-          </a>
-          <a href="#" class="product-link">
-            <img src="../assets/Frame 12.png" alt="Compare" class="product-icon">
-          </a>
-          <a href="#" class="product-link">
-            <img src="../assets/Frame 10.png" alt="Like" class="product-icon">
-          </a>
-        </div>
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+    productCard.setAttribute("data-product-id", product.id);
+    productCard.innerHTML = `
+      ${badgeHTML}
+      <img src="${product.image}" alt="${product.name}" class="product-image">
+      <div class="product-info">
+        <p class="product-name">${product.name}</p>
+        <p class="product-description">${product.description}</p>
+        <p class="product-price">
+          ${product.price}
+          ${
+            product.discount
+              ? `<span class="product-discount">${product.discount}</span>`
+              : ""
+          }
+        </p>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+      <div class="product-links">
+        <a href="#" class="product-link"><img src="../assets/Frame 11.png" alt="Share" class="product-icon"></a>
+        <a href="#" class="product-link"><img src="../assets/Frame 12.png" alt="Compare" class="product-icon"></a>
+        <a href="#" class="product-link"><img src="../assets/Frame 10.png" alt="Like" class="product-icon"></a>
       </div>
     `;
+    productGrid.appendChild(productCard);
   });
-}
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const products = await fetchProducts();
-  renderProducts(products);
-
-  document.querySelectorAll(".product-card").forEach((card) => {
+  productGrid.querySelectorAll(".product-card").forEach((card) => {
     card.addEventListener("click", function (event) {
       if (
         event.target.closest(".add-to-cart") ||
@@ -76,4 +72,69 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   });
+}
+
+function setupPagination(totalItems) {
+  paginationContainer.innerHTML = "";
+  const pageCount = Math.ceil(totalItems / productsPerPage);
+
+  for (let i = 1; i <= pageCount; i++) {
+    const pageBtn = document.createElement("button");
+    pageBtn.textContent = i;
+    pageBtn.classList.add("page-btn");
+    if (i === 1) pageBtn.classList.add("active");
+
+    pageBtn.addEventListener("click", () => {
+      renderProducts(i);
+      setActivePage(i);
+    });
+
+    paginationContainer.appendChild(pageBtn);
+  }
+}
+
+function setActivePage(currentPage) {
+  paginationContainer.querySelectorAll("button").forEach((el, idx) => {
+    el.classList.toggle("active", idx + 1 === currentPage);
+  });
+}
+
+function filterByCategory(category) {
+  filteredProducts = allProducts.filter((p) => p.category === category);
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
+function getCategoryFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('category');
+}
+
+fetch("../assets/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    allProducts = data.products;
+    const initialCategory = getCategoryFromUrl();
+    if (initialCategory) {
+      filterByCategory(initialCategory);
+    } else {
+      filteredProducts = allProducts;
+      renderProducts(1);
+      setupPagination(filteredProducts.length);
+    }
+  })
+  .catch((error) => console.error("Error fetching product data:", error));
+
+document.getElementById('living-room-btn')?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("living-room");
+});
+document.getElementById('bedroom-btn')?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("bedroom");
+});
+document.getElementById('dining-room-btn')?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("dining-room");
 });
