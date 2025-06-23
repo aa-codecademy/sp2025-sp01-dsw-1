@@ -135,7 +135,7 @@ header {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 110%;
+  top: 100%;
   left: 0;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -171,7 +171,7 @@ header {
   gap: 55rem;;
   flex-wrap: wrap;
   height: 40px;
-  background-color: orange;
+  background-color: #F9F1E7;
 }
 .sort-dropdown {
   position: relative;
@@ -196,7 +196,7 @@ header {
 .sort-content {
   display: none;
   position: absolute;
-  top: 110%;
+  top: 100%;
   left: 0;
   right: auto;
   background-color: #fff;
