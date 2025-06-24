@@ -1,7 +1,24 @@
 import { loadHTML } from '../scripts/utils.js';
+import { showNotification } from './notification.js';
+import { addToCart, updateCartCountIcon } from './cart-utils.js';
 
 const mostPopularGrid = document.querySelector(".most-popular-grid");
 const categoryProductsGrid = document.querySelector(".category-products-grid");
+
+function attachAddToCartListeners(products, gridElement) {
+  gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
+    btn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const card = btn.closest(".product-card");
+      const productId = card.getAttribute("data-product-id");
+      const product = products.find(p => String(p.id) === String(productId));
+      if (product) {
+        addToCart(product, 1);
+        showNotification(`${product.name} added to cart!`);
+      }
+    });
+  });
+}
 
 function renderProductCards(products, gridElement) {
   gridElement.innerHTML = '';
@@ -66,6 +83,8 @@ function renderProductCards(products, gridElement) {
       }
     });
   });
+
+  attachAddToCartListeners(products, gridElement);
 }
 
 fetch("../assets/products.json")
@@ -102,3 +121,7 @@ fetch("../assets/products.json")
 
 loadHTML('../templates/header.html', 'afterbegin'); 
 loadHTML('../templates/footer.html', 'beforeend');
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCountIcon();
+});
