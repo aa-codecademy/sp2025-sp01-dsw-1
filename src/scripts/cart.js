@@ -9,10 +9,12 @@ async function fetchProducts() {
   return data.products;
 }
 
-let cart = [
-  { id: 5, quantity: 1 },
-  { id: 4, quantity: 2 },
-];
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 function parsePrice(priceStr) {
   return Number(priceStr.replace(/[^\d]/g, ""));
@@ -23,12 +25,13 @@ function formatCurrency(num) {
 }
 
 function renderCart(products) {
+  const cart = getCart();
   const tbody = document.getElementById("cart-items");
   tbody.innerHTML = "";
   let subtotal = 0;
 
   cart.forEach((cartItem, idx) => {
-    const product = products.find((p) => p.id === cartItem.id);
+    const product = products.find((p) => String(p.id) === String(cartItem.id));
     if (!product) return;
 
     const price = parsePrice(product.price);
@@ -69,31 +72,37 @@ function renderCart(products) {
 document.addEventListener("DOMContentLoaded", async () => {
   const products = await fetchProducts();
   renderCart(products);
+
   document
     .getElementById("cart-items")
     .addEventListener("input", function (event) {
       if (event.target.classList.contains("cart-qty-input")) {
+        const cart = getCart();
         let itemIndex = Number(event.target.dataset.idx);
         let newQuantity = Number(event.target.value);
         if (isNaN(newQuantity) || newQuantity < 1) {
           newQuantity = 1;
         }
         let product = products.find(function (p) {
-          return p.id === cart[itemIndex].id;
+          return String(p.id) === String(cart[itemIndex].id);
         });
         if (newQuantity > product.stock) {
           newQuantity = product.stock;
         }
         cart[itemIndex].quantity = newQuantity;
+        saveCart(cart);
         renderCart(products);
       }
     });
+
   document
     .getElementById("cart-items")
     .addEventListener("click", function (event) {
       if (event.target.classList.contains("cart-remove-btn")) {
+        const cart = getCart();
         let itemIndex = Number(event.target.dataset.idx);
         cart.splice(itemIndex, 1);
+        saveCart(cart);
         renderCart(products);
       }
     });

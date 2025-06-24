@@ -1,3 +1,21 @@
+import { showNotification } from './notification.js';
+import { addToCart, updateCartCountIcon } from './cart-utils.js';
+
+function attachAddToCartListeners(products, gridElement) {
+  gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
+    btn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const card = btn.closest(".product-card");
+      const productId = Number(card.getAttribute("data-product-id"));
+      const product = products.find(p => p.id === productId);
+      if (product) {
+        addToCart(product, 1);
+        showNotification(`${product.name} added to cart!`);
+      }
+    });
+  });
+}
+
 import { loadHTML } from "./utils.js";
 
 loadHTML("../templates/header.html", "afterbegin");
@@ -87,6 +105,8 @@ function renderProducts(page) {
       }
     });
   });
+
+  attachAddToCartListeners(productsToShow, productGrid);
 }
 
 function setupPagination(totalItems) {
@@ -246,3 +266,6 @@ function scrollToProductsSection() {
   if (section) section.scrollIntoView({ behavior: 'smooth' });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCountIcon();
+});

@@ -1,4 +1,6 @@
 import { loadHTML } from './utils.js';
+import { showNotification } from './notification.js';
+import { addToCart, updateCartCountIcon } from './cart-utils.js';
 
 loadHTML('../templates/header.html', 'afterbegin');
 loadHTML('../templates/footer.html', 'beforeend');
@@ -57,6 +59,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     document.getElementById('add-to-cart-btn').onclick = () => {
-        alert(`Added ${qtyInput.value} "${product.name}" to cart!`);
+        const qty = parseInt(qtyInput.value, 10) || 1;
+        addToCart(product, qty);
+        showNotification(`${product.name} added to cart!`);
     };
+
+    updateCartCountIcon();
 });
