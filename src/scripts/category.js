@@ -119,6 +119,7 @@ function filterByCategory(category) {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function filterByStock() {
@@ -245,6 +246,3 @@ function scrollToProductsSection() {
   if (section) section.scrollIntoView({ behavior: 'smooth' });
 }
 
-document.getElementById('dining-room-btn')?.addEventListener('click', scrollToProductsSection);
-document.getElementById('living-room-btn')?.addEventListener('click', scrollToProductsSection);
-document.getElementById('bedroom-btn')?.addEventListener('click', scrollToProductsSection);
