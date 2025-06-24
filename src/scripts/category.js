@@ -1,4 +1,7 @@
-import { loadHTML } from "../scripts/utils.js";
+import { loadHTML } from "./utils.js";
+
+loadHTML("../templates/header.html", "afterbegin");
+loadHTML("../templates/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");
@@ -6,15 +9,16 @@ const paginationContainer = document.getElementById("pagination");
 const livingRoomBtn = document.getElementById("living-room-btn");
 const bedroomBtn = document.getElementById("bedroom-btn");
 const diningRoomBtn = document.getElementById("dining-room-btn");
+
 const stockBtnFilter = document.getElementById("stock-btn-filter");
 const livingRoomBtnFilter = document.getElementById("livingroom-btn-filter");
 const bedroomBtnFilter = document.getElementById("bedroom-btn-filter");
 const diningRoomBtnFilter = document.getElementById("diningroom-btn-filter");
+
 const azBtnSort = document.getElementById("a-z-sort");
 const zaBtnSort = document.getElementById("z-a-sort");
 const lowestFirstSort = document.getElementById("lowest-first-sort");
 const highestFirstSort = document.getElementById("highest-first-sort");
-
 
 const productsPerPage = 16;
 let allProducts = [];
@@ -28,9 +32,6 @@ function renderProducts(page) {
   const productsToShow = filteredProducts.slice(start, end);
 
   productsToShow.forEach((product) => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
-
     let badgeHTML = "";
     if (product.discount) {
       const discountPercentage = Math.round(
@@ -44,6 +45,9 @@ function renderProducts(page) {
       badgeHTML = `<div class="product-badge new">New</div>`;
     }
 
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+    productCard.setAttribute("data-product-id", product.id);
     productCard.innerHTML = `
       ${badgeHTML}
       <img src="${product.image}" alt="${product.name}" class="product-image">
@@ -66,8 +70,22 @@ function renderProducts(page) {
         <a href="#" class="product-link"><img src="../assets/Frame 10.png" alt="Like" class="product-icon"></a>
       </div>
     `;
-
     productGrid.appendChild(productCard);
+  });
+
+  productGrid.querySelectorAll(".product-card").forEach((card) => {
+    card.addEventListener("click", function (event) {
+      if (
+        event.target.closest(".add-to-cart") ||
+        event.target.closest(".product-link")
+      ) {
+        return;
+      }
+      const productId = card.getAttribute("data-product-id");
+      if (productId) {
+        window.location.href = `product_details.html?id=${productId}`;
+      }
+    });
   });
 }
 
@@ -91,7 +109,7 @@ function setupPagination(totalItems) {
 }
 
 function setActivePage(currentPage) {
-  document.querySelectorAll(".pagination-buttons button").forEach((el, idx) => {
+  paginationContainer.querySelectorAll("button").forEach((el, idx) => {
     el.classList.toggle("active", idx + 1 === currentPage);
   });
 }
@@ -101,31 +119,36 @@ function filterByCategory(category) {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
-function filterByStock(){
+function filterByStock() {
   filteredProducts = allProducts.filter((p) => p.stock > 0);
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
 }
 
-function sortByAtoZ(){
-  filteredProducts = [...allProducts].sort((a,b) =>a.name.localeCompare(b.name));
+function sortByAtoZ() {
+  filteredProducts = [...filteredProducts].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
 }
 
-function sortByZtoA(){
-   filteredProducts = [...allProducts].sort((a,b) =>b.name.localeCompare(a.name));
+function sortByZtoA() {
+  filteredProducts = [...filteredProducts].sort((a, b) =>
+    b.name.localeCompare(a.name)
+  );
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
 }
 
 function sortByLowestFirst() {
-  filteredProducts = [...allProducts].sort((a, b) => {
+  filteredProducts = [...filteredProducts].sort((a, b) => {
     const priceA = parseInt(a.price.replace(/[^\d]/g, ""));
     const priceB = parseInt(b.price.replace(/[^\d]/g, ""));
     return priceA - priceB;
@@ -135,77 +158,91 @@ function sortByLowestFirst() {
   setupPagination(filteredProducts.length);
   setActivePage(1);
 }
+
 function sortByHighestFirst() {
-  filteredProducts = [...allProducts].sort((a, b) => {
+  filteredProducts = [...filteredProducts].sort((a, b) => {
     const priceA = parseInt(a.price.replace(/[^\d]/g, ""));
     const priceB = parseInt(b.price.replace(/[^\d]/g, ""));
     return priceB - priceA;
   });
+
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
 }
 
-
+function getCategoryFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("category");
+}
 
 fetch("../assets/products.json")
   .then((response) => response.json())
   .then((data) => {
     allProducts = data.products;
-    filteredProducts = allProducts;
-    renderProducts(1);
-    setupPagination(filteredProducts.length);
+    const initialCategory = getCategoryFromUrl();
+    if (initialCategory) {
+      filterByCategory(initialCategory);
+    } else {
+      filteredProducts = allProducts;
+      renderProducts(1);
+      setupPagination(filteredProducts.length);
+    }
   })
   .catch((error) => console.error("Error fetching product data:", error));
 
-livingRoomBtn.addEventListener("click", (e) => {
+// Top buttons
+livingRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("living-room");
 });
-bedroomBtn.addEventListener("click", (e) => {
+bedroomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("bedroom");
 });
-diningRoomBtn.addEventListener("click", (e) => {
+diningRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("dining-room");
 });
-livingRoomBtnFilter.addEventListener("click", (e) => {
+
+// Filter buttons
+livingRoomBtnFilter?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("living-room");
 });
-bedroomBtnFilter.addEventListener("click", (e) => {
+bedroomBtnFilter?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("bedroom");
 });
-diningRoomBtnFilter.addEventListener("click", (e) => {
+diningRoomBtnFilter?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("dining-room");
 });
-stockBtnFilter.addEventListener("click", (e) => {
+stockBtnFilter?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByStock();
 });
 
-azBtnSort.addEventListener("click", (e) =>{
+// Sort buttons
+azBtnSort?.addEventListener("click", (e) => {
   e.preventDefault();
   sortByAtoZ();
 });
-
-zaBtnSort.addEventListener("click", (e) =>{
+zaBtnSort?.addEventListener("click", (e) => {
   e.preventDefault();
   sortByZtoA();
 });
-
-lowestFirstSort.addEventListener("click", (e) => {
+lowestFirstSort?.addEventListener("click", (e) => {
   e.preventDefault();
   sortByLowestFirst();
 });
-
-highestFirstSort.addEventListener("click", (e =>{
+highestFirstSort?.addEventListener("click", (e) => {
   e.preventDefault();
   sortByHighestFirst();
-}));
+});
 
-loadHTML("../templates/header.html", "afterbegin");
-loadHTML("../templates/footer.html", "beforeend");
+function scrollToProductsSection() {
+  const section = document.getElementById('products-section');
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
