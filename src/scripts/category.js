@@ -6,6 +6,20 @@ loadHTML("../templates/footer.html", "beforeend");
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");
 
+const livingRoomBtn = document.getElementById("living-room-btn");
+const bedroomBtn = document.getElementById("bedroom-btn");
+const diningRoomBtn = document.getElementById("dining-room-btn");
+
+const stockBtnFilter = document.getElementById("stock-btn-filter");
+const livingRoomBtnFilter = document.getElementById("livingroom-btn-filter");
+const bedroomBtnFilter = document.getElementById("bedroom-btn-filter");
+const diningRoomBtnFilter = document.getElementById("diningroom-btn-filter");
+
+const azBtnSort = document.getElementById("a-z-sort");
+const zaBtnSort = document.getElementById("z-a-sort");
+const lowestFirstSort = document.getElementById("lowest-first-sort");
+const highestFirstSort = document.getElementById("highest-first-sort");
+
 const productsPerPage = 16;
 let allProducts = [];
 let filteredProducts = [];
@@ -30,6 +44,7 @@ function renderProducts(page) {
     } else {
       badgeHTML = `<div class="product-badge new">New</div>`;
     }
+
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.setAttribute("data-product-id", product.id);
@@ -106,9 +121,58 @@ function filterByCategory(category) {
   setActivePage(1);
 }
 
+function filterByStock() {
+  filteredProducts = allProducts.filter((p) => p.stock > 0);
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
+function sortByAtoZ() {
+  filteredProducts = [...filteredProducts].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
+function sortByZtoA() {
+  filteredProducts = [...filteredProducts].sort((a, b) =>
+    b.name.localeCompare(a.name)
+  );
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
+function sortByLowestFirst() {
+  filteredProducts = [...filteredProducts].sort((a, b) => {
+    const priceA = parseInt(a.price.replace(/[^\d]/g, ""));
+    const priceB = parseInt(b.price.replace(/[^\d]/g, ""));
+    return priceA - priceB;
+  });
+
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
+function sortByHighestFirst() {
+  filteredProducts = [...filteredProducts].sort((a, b) => {
+    const priceA = parseInt(a.price.replace(/[^\d]/g, ""));
+    const priceB = parseInt(b.price.replace(/[^\d]/g, ""));
+    return priceB - priceA;
+  });
+
+  renderProducts(1);
+  setupPagination(filteredProducts.length);
+  setActivePage(1);
+}
+
 function getCategoryFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('category');
+  return params.get("category");
 }
 
 fetch("../assets/products.json")
@@ -126,15 +190,52 @@ fetch("../assets/products.json")
   })
   .catch((error) => console.error("Error fetching product data:", error));
 
-document.getElementById('living-room-btn')?.addEventListener("click", (e) => {
+// Top buttons
+livingRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("living-room");
 });
-document.getElementById('bedroom-btn')?.addEventListener("click", (e) => {
+bedroomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("bedroom");
 });
-document.getElementById('dining-room-btn')?.addEventListener("click", (e) => {
+diningRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("dining-room");
+});
+
+// Filter buttons
+livingRoomBtnFilter?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("living-room");
+});
+bedroomBtnFilter?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("bedroom");
+});
+diningRoomBtnFilter?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByCategory("dining-room");
+});
+stockBtnFilter?.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterByStock();
+});
+
+// Sort buttons
+azBtnSort?.addEventListener("click", (e) => {
+  e.preventDefault();
+  sortByAtoZ();
+});
+zaBtnSort?.addEventListener("click", (e) => {
+  e.preventDefault();
+  sortByZtoA();
+});
+lowestFirstSort?.addEventListener("click", (e) => {
+  e.preventDefault();
+  sortByLowestFirst();
+});
+highestFirstSort?.addEventListener("click", (e) => {
+  e.preventDefault();
+  sortByHighestFirst();
 });

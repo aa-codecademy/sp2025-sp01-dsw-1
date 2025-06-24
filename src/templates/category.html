@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Category Page</title>
-    <link rel="stylesheet" href="/src/styles/category.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/category.css" type="text/css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
   </head>
@@ -66,20 +66,20 @@
           <div class="filter-dropdown">
             <span>Filter</span>
             <div class="dropdown-content">
-              <button>Stock</button>
-              <button>Diningroom</button>
-              <button>Livingroom</button>
-              <button>Bedroom</button>
+              <button id="stock-btn-filter">Stock</button>
+              <button id="diningroom-btn-filter">Diningroom</button>
+              <button id="livingroom-btn-filter">Livingroom</button>
+              <button id="bedroom-btn-filter">Bedroom</button>
             </div>
           </div>
 
           <div class="sort-dropdown">
             <span>Sort by:</span>
             <div class="sort-content">
-              <button>a-z</button>
-              <button>z-a</button>
-              <button>low price first</button>
-              <button>low price first</button>
+              <button id="a-z-sort">a-z</button>
+              <button id="z-a-sort">z-a</button>
+              <button id="lowest-first-sort">lowest first</button>
+              <button id="highest-first-sort">highest first</button>
             </div>
           </div>
         </section>
@@ -99,7 +99,7 @@
         </div>
       </main>
 
-      <script type="module" src="/src/scripts/category.js"></script>
+      <script type="module" src="../scripts/category.js"></script>
     </div>
   </body>
 </html>
