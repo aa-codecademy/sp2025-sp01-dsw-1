@@ -1,4 +1,5 @@
 import { loadHTML } from "./utils.js";
+import { getCart, saveCart } from './cart-utils.js';
 
 loadHTML("../templates/header.html", "afterbegin");
 loadHTML("../templates/footer.html", "beforeend");
@@ -7,13 +8,6 @@ async function fetchProducts() {
   const response = await fetch("../assets/products.json");
   const data = await response.json();
   return data.products;
-}
-
-function getCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
-}
-function saveCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function parsePrice(priceStr) {
