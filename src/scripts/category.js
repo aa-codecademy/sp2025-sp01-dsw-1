@@ -239,3 +239,12 @@ highestFirstSort?.addEventListener("click", (e) => {
   e.preventDefault();
   sortByHighestFirst();
 });
+
+function scrollToProductsSection() {
+  const section = document.getElementById('products-section');
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.getElementById('dining-room-btn')?.addEventListener('click', scrollToProductsSection);
+document.getElementById('living-room-btn')?.addEventListener('click', scrollToProductsSection);
+document.getElementById('bedroom-btn')?.addEventListener('click', scrollToProductsSection);
