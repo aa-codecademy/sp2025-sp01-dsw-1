@@ -1,3 +1,4 @@
+import { loadHTML } from "./utils.js";
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon } from './cart-utils.js';
 
@@ -15,8 +16,6 @@ function attachAddToCartListeners(products, gridElement) {
     });
   });
 }
-
-import { loadHTML } from "./utils.js";
 
 loadHTML("../templates/header.html", "afterbegin");
 loadHTML("../templates/footer.html", "beforeend");
