@@ -128,32 +128,9 @@ fetch("src/assets/products.json")
   })
   .catch((error) => console.error("Error fetching product data:", error));
 
-const headerPath = 'src/templates/header.html';
-loadHTML(headerPath, 'afterbegin').then(() => {
-  if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-    document.querySelectorAll('header img').forEach(img => {
-      let origSrc = img.getAttribute('src');
-      if (origSrc && (origSrc.startsWith('../assets/') || origSrc.startsWith('/assets/'))) {
-        img.setAttribute('src', origSrc.replace(/^\.\.\/assets\//, 'src/assets/').replace(/^\/assets\//, 'src/assets/'));
-      }
-    });
-    document.querySelectorAll('.navbar-links a, .navbar-icons a').forEach(a => {
-      let href = a.getAttribute('href');
-      if (href === '../../index.html') {
-        a.setAttribute('href', 'index.html');
-      } else if (
-        !href.startsWith('http') &&
-        !href.startsWith('src/templates/') &&
-        href !== 'index.html'
-      ) {
-        href = href.replace(/^\.\//, '').replace(/^\//, '');
-        a.setAttribute('href', 'src/templates/' + href);
-      }
-    });
-  }
-});
 
-loadHTML('src/templates/footer.html', 'beforeend');
+loadHTML("/header.html", "afterbegin");
+loadHTML("/footer.html", "beforeend");
 
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCountIcon();

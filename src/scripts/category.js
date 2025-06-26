@@ -17,8 +17,8 @@ function attachAddToCartListeners(products, gridElement) {
   });
 }
 
-loadHTML("../templates/header.html", "afterbegin");
-loadHTML("../templates/footer.html", "beforeend");
+loadHTML("/header.html", "afterbegin");
+loadHTML("/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");

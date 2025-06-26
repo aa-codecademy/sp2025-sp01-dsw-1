@@ -1,8 +1,8 @@
 import { loadHTML } from "./utils.js";
 import { getCart, saveCart } from './cart-utils.js';
 
-loadHTML("../templates/header.html", "afterbegin");
-loadHTML("../templates/footer.html", "beforeend");
+loadHTML("/header.html", "afterbegin");
+loadHTML("/footer.html", "beforeend");
 
 async function fetchProducts() {
   const response = await fetch("../assets/products.json");
