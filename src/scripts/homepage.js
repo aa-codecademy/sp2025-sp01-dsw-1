@@ -88,7 +88,7 @@ function renderProductCards(products, gridElement) {
       }
       const productId = card.getAttribute("data-product-id");
       if (productId) {
-        window.location.href = `product_details.html?id=${productId}`;
+        window.location.href = `/src/templates/product_details.html?id=${productId}`;
       }
     });
   });
