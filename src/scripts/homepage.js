@@ -1,6 +1,6 @@
 import { loadHTML } from '../scripts/utils.js';
 import { showNotification } from './notification.js';
-import { addToCart, updateCartCountIcon } from './cart-utils.js';
+import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
 
 const mostPopularGrid = document.querySelector(".most-popular-grid");
 const categoryProductsGrid = document.querySelector(".category-products-grid");
@@ -13,8 +13,29 @@ function attachAddToCartListeners(products, gridElement) {
       const productId = card.getAttribute("data-product-id");
       const product = products.find(p => String(p.id) === String(productId));
       if (product) {
+        const cart = getCart();
+        const cartItem = cart.find(item => item.id === product.id);
+        const currentQty = cartItem ? cartItem.quantity : 0;
+
+        if (product.stock === 0) {
+          showNotification
+            ? showNotification("Sorry, this product is out of stock.")
+            : alert("Sorry, this product is out of stock.");
+          return;
+        }
+
+        if (currentQty + 1 > product.stock) {
+          showNotification
+            ? showNotification(`Sorry, only ${product.stock} items available.`)
+            : alert(`Sorry, only ${product.stock} items available.`);
+          return;
+        }
+
         addToCart(product, 1);
-        showNotification(`${product.name} added to cart!`);
+        showNotification
+          ? showNotification(`${product.name} added to cart!`)
+          : alert(`${product.name} added to cart!`);
+        updateCartCountIcon && updateCartCountIcon();
       }
     });
   });
@@ -53,7 +74,9 @@ function renderProductCards(products, gridElement) {
           }
         </p>
       </div>
-      <button class="add-to-cart">Add to Cart</button>
+      <button class="add-to-cart" ${product.stock === 0 ? "disabled title='Out of stock'" : ""}>
+        ${product.stock === 0 ? "Out of Stock" : "Add to Cart"}
+      </button>
       <div class="product-links">
         <a href="#" class="product-link">
           <img src="../assets/Frame 11.png" alt="Share" class="product-icon">

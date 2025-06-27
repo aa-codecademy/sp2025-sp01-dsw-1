@@ -108,6 +108,13 @@ body {
     color: #222;
 }
 
+.quantity-selector button:disabled {
+    color: #bbb;
+    cursor: default;
+    background: #f3f3f3;
+    border-color: #eee;
+}
+
 .quantity-selector input {
     width: 40px;
     text-align: center;
@@ -130,4 +137,10 @@ body {
     background: #b6893c;
     color: #fff;
     border-color: #b6893c;
+}
+
+.stock-info {
+    color: #888;
+    font-size: 0.98rem;
+    margin-left: 10px;
 }
