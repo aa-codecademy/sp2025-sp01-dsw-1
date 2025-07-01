@@ -1,4 +1,4 @@
 import { loadHTML } from './utils.js';
 
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
+loadHTML('../templates/header.html', 'afterbegin');
+loadHTML('../templates/footer.html', 'beforeend');
