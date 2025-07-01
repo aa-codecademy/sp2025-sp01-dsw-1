@@ -1,4 +1,3 @@
-import { loadHTML } from "./utils.js";
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
 
@@ -38,8 +37,10 @@ function attachAddToCartListeners(products, gridElement) {
   });
 }
 
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
+import { loadHTML } from "./utils.js";
+
+loadHTML("../templates/header.html", "afterbegin");
+loadHTML("../templates/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");

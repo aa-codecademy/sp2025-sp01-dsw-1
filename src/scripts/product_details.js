@@ -2,8 +2,8 @@ import { loadHTML } from './utils.js';
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
 
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
+loadHTML('../templates/header.html', 'afterbegin');
+loadHTML('../templates/footer.html', 'beforeend');
 
 async function fetchProducts() {
     const response = await fetch('../assets/products.json');
