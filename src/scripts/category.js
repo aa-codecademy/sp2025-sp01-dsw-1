@@ -105,17 +105,6 @@ function renderProducts(page) {
       <button class="add-to-cart" ${product.stock === 0 ? "disabled title='Out of stock'" : ""}>
         ${product.stock === 0 ? "Out of Stock" : "Add to Cart"}
       </button>
-      <div class="product-links">
-        <a href="#" class="product-link">
-          <img src="../assets/Frame 11.png" alt="Share" class="product-icon">
-        </a>
-        <a href="#" class="product-link">
-          <img src="../assets/Frame 12.png" alt="Compare" class="product-icon">
-        </a>
-        <a href="#" class="product-link">
-          <img src="../assets/Frame 10.png" alt="Like" class="product-icon">
-        </a>
-      </div>
     `;
     productGrid.appendChild(productCard);
   });
@@ -123,8 +112,7 @@ function renderProducts(page) {
   productGrid.querySelectorAll(".product-card").forEach((card) => {
     card.addEventListener("click", function (event) {
       if (
-        event.target.closest(".add-to-cart") ||
-        event.target.closest(".product-link")
+        event.target.closest(".add-to-cart")
       ) {
         return;
       }
