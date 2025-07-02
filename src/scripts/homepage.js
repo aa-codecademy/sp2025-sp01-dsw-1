@@ -59,23 +59,12 @@ function renderProductCards(products, gridElement) {
       badgeHTML = `<div class="product-badge new">New</div>`;
     }
 
-    // Fix image path for homepage
-    let imagePath = product.image;
-    if (
-      window.location.pathname === "/index.html" ||
-      window.location.pathname === "/"
-    ) {
-      if (imagePath.startsWith("../assets/")) {
-        imagePath = imagePath.replace("../assets/", "src/assets/");
-      }
-    }
-
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.setAttribute("data-product-id", product.id);
     productCard.innerHTML = `
       ${badgeHTML}
-      <img src="${imagePath}" alt="${product.name}" class="product-image">
+      <img src="${product.image}" alt="${product.name}" class="product-image">
       <div class="product-info">
         <p class="product-name">${product.name}</p>
         <p class="product-description">${product.description}</p>
@@ -93,17 +82,6 @@ function renderProductCards(products, gridElement) {
       }>
         ${product.stock === 0 ? "Out of Stock" : "Add to Cart"}
       </button>
-      <div class="product-links">
-        <a href="#" class="product-link">
-          <img src="src/assets/Frame 11.png" alt="Share" class="product-icon">
-        </a>
-        <a href="#" class="product-link">
-          <img src="src/assets/Frame 12.png" alt="Compare" class="product-icon">
-        </a>
-        <a href="#" class="product-link">
-          <img src="src/assets/Frame 10.png" alt="Like" class="product-icon">
-        </a>
-      </div>
     `;
     gridElement.appendChild(productCard);
   });
@@ -118,7 +96,7 @@ function renderProductCards(products, gridElement) {
       }
       const productId = card.getAttribute("data-product-id");
       if (productId) {
-        window.location.href = `/src/templates/product_details.html?id=${productId}`;
+        window.location.href = `product_details.html?id=${productId}`;
       }
     });
   });
@@ -126,7 +104,7 @@ function renderProductCards(products, gridElement) {
   attachAddToCartListeners(products, gridElement);
 }
 
-fetch("src/assets/products.json")
+fetch("../assets/products.json")
   .then((response) => response.json())
   .then((data) => {
     const products = data.products;
