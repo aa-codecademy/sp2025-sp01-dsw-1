@@ -1,7 +1,8 @@
-import { loadHTML } from "./utils.js";
+// import { loadHTML } from "./utils.js";
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
-import { setupSearch } from './search-utils.js';
+import { init } from './search-utils.js'; 
+init();
 
 function attachAddToCartListeners(products, gridElement) {
   gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -225,36 +226,22 @@ function getCategoryFromUrl() {
   return params.get("category");
 }
 
-async function init() {
-  await loadHTML("/header.html", "afterbegin");
-  await loadHTML("/footer.html", "beforeend");
+fetch("../assets/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    allProducts = data.products;
+    const initialCategory = getCategoryFromUrl();
+    if (initialCategory) {
+      filterByCategory(initialCategory);
+    } else {
+      filteredProducts = allProducts;
+      renderProducts(1);
+      setupPagination(filteredProducts.length);
+    }
+  })
+  .catch((error) => console.error("Error fetching product data:", error));
 
-  updateCartCountIcon();
-
- 
-  fetch("../assets/products.json")
-    .then((response) => response.json())
-    .then((data) => {
-      allProducts = data.products;
-
-    
-      setupSearch(allProducts);
-
-      const initialCategory = getCategoryFromUrl();
-      if (initialCategory) {
-        filterByCategory(initialCategory);
-      } else {
-        filteredProducts = allProducts;
-        renderProducts(1);
-        setupPagination(filteredProducts.length);
-      }
-    })
-    .catch((error) => console.error("Error fetching product data:", error));
-}
-
-init(); 
-
-
+// Top buttons
 livingRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("living-room");

@@ -1,3 +1,4 @@
+import { loadHTML } from './utils.js';
 export function setupSearch(products) {
   const searchBtn = document.getElementById("searchBtn");
   const searchContainer = document.getElementById("search-container");
@@ -98,4 +99,14 @@ export function setupSearch(products) {
       suggestionBox.style.display = "none";
     }
   });
+}
+export async function init() {
+  await loadHTML("/header.html", "afterbegin");
+  await loadHTML("/footer.html", "beforeend");
+
+  const response = await fetch("/src/assets/products.json");
+  const data = await response.json();
+  const products = data.products;
+
+  setupSearch(products);
 }
