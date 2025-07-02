@@ -54,7 +54,9 @@
     cursor: pointer;
     filter: invert(0); /* Ensures black icons */
 }
-
+.search-container {
+  position: relative;
+}
 
 @media (max-width: 768px) {
     .navbar {

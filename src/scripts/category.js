@@ -1,6 +1,7 @@
 import { loadHTML } from "./utils.js";
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
+import { setupSearch } from './search-utils.js';
 
 function attachAddToCartListeners(products, gridElement) {
   gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -38,8 +39,8 @@ function attachAddToCartListeners(products, gridElement) {
   });
 }
 
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
+// loadHTML("/header.html", "afterbegin");
+// loadHTML("/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");
@@ -224,22 +225,36 @@ function getCategoryFromUrl() {
   return params.get("category");
 }
 
-fetch("../assets/products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    allProducts = data.products;
-    const initialCategory = getCategoryFromUrl();
-    if (initialCategory) {
-      filterByCategory(initialCategory);
-    } else {
-      filteredProducts = allProducts;
-      renderProducts(1);
-      setupPagination(filteredProducts.length);
-    }
-  })
-  .catch((error) => console.error("Error fetching product data:", error));
+async function init() {
+  await loadHTML("/header.html", "afterbegin");
+  await loadHTML("/footer.html", "beforeend");
 
-// Top buttons
+  updateCartCountIcon();
+
+ 
+  fetch("../assets/products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      allProducts = data.products;
+
+    
+      setupSearch(allProducts);
+
+      const initialCategory = getCategoryFromUrl();
+      if (initialCategory) {
+        filterByCategory(initialCategory);
+      } else {
+        filteredProducts = allProducts;
+        renderProducts(1);
+        setupPagination(filteredProducts.length);
+      }
+    })
+    .catch((error) => console.error("Error fetching product data:", error));
+}
+
+init(); 
+
+
 livingRoomBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   filterByCategory("living-room");

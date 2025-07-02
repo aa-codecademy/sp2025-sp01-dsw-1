@@ -1,6 +1,7 @@
 import { loadHTML } from '../scripts/utils.js';
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
+import { setupSearch } from './search-utils.js';
 
 const mostPopularGrid = document.querySelector(".most-popular-grid");
 const categoryProductsGrid = document.querySelector(".category-products-grid");
@@ -119,42 +120,45 @@ function renderProductCards(products, gridElement) {
   attachAddToCartListeners(products, gridElement);
 }
 
-fetch("src/assets/products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const products = data.products;
+async function init() {
+  await loadHTML("/header.html", "afterbegin");
+  await loadHTML("/footer.html", "beforeend");
 
-    const mostPopularProducts = products.filter(
-      (product) => product.IsMostPopular
-    );
-    renderProductCards(mostPopularProducts.slice(0, 8), mostPopularGrid);
-
-    function filterAndRenderCategory(categoryName) {
-      const filtered = products.filter(
-        (product) => product.category && product.category.toLowerCase() === categoryName.toLowerCase()
-      );
-      renderProductCards(filtered, categoryProductsGrid);
-    }
-
-    document.getElementById('dining-room-btn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      filterAndRenderCategory('dining-room');
-    });
-    document.getElementById('living-room-btn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      filterAndRenderCategory('living-room');
-    });
-    document.getElementById('bedroom-btn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      filterAndRenderCategory('bedroom');
-    });
-  })
-  .catch((error) => console.error("Error fetching product data:", error));
-
-
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
-
-document.addEventListener('DOMContentLoaded', () => {
   updateCartCountIcon();
-});
+
+  // Fetch and render products
+  fetch("src/assets/products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const products = data.products;
+
+      setupSearch(products); 
+
+      const mostPopularProducts = products.filter(
+        (product) => product.IsMostPopular
+      );
+      renderProductCards(mostPopularProducts.slice(0, 8), mostPopularGrid);
+
+      function filterAndRenderCategory(categoryName) {
+        const filtered = products.filter(
+          (product) => product.category && product.category.toLowerCase() === categoryName.toLowerCase()
+        );
+        renderProductCards(filtered, categoryProductsGrid);
+      }
+
+      document.getElementById('dining-room-btn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterAndRenderCategory('dining-room');
+      });
+      document.getElementById('living-room-btn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterAndRenderCategory('living-room');
+      });
+      document.getElementById('bedroom-btn')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterAndRenderCategory('bedroom');
+      });
+    })
+    .catch((error) => console.error("Error fetching product data:", error));
+}
+init();
