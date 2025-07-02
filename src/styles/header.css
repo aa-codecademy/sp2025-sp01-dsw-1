@@ -1,5 +1,6 @@
 /* Navigation Bar */
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +28,9 @@
 
 /* Navigation Links */
 .navbar-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 50px; /* Increased spacing between links */
 }
