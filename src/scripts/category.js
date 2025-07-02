@@ -165,6 +165,7 @@ function filterByStock() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByAtoZ() {
@@ -174,6 +175,7 @@ function sortByAtoZ() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByZtoA() {
@@ -183,6 +185,7 @@ function sortByZtoA() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByLowestFirst() {
@@ -195,6 +198,7 @@ function sortByLowestFirst() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByHighestFirst() {
@@ -207,6 +211,7 @@ function sortByHighestFirst() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function getCategoryFromUrl() {

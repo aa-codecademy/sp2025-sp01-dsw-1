@@ -16,7 +16,7 @@ function parsePrice(priceStr) {
 }
 
 function formatCurrency(num) {
-  return "Rp " + num.toLocaleString("id-ID");
+  return "$ " + num.toLocaleString("id-ID");
 }
 
 function renderCart(products) {
