@@ -1,9 +1,20 @@
 import { loadHTML } from './utils.js';
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
+import { setupSearch } from './search-utils.js';
 
-loadHTML("/header.html", "afterbegin");
-loadHTML("/footer.html", "beforeend");
+async function init() {
+  await loadHTML("/header.html", "afterbegin");
+  await loadHTML("/footer.html", "beforeend");
+
+  const response = await fetch("/src/assets/products.json");
+  const data = await response.json();
+  const products = data.products;
+
+  setupSearch(products);
+}
+
+init();
 
 async function fetchProducts() {
     const response = await fetch('../assets/products.json');
