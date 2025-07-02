@@ -101,8 +101,8 @@ export function setupSearch(products) {
   });
 }
 export async function init() {
-  await loadHTML("/header.html", "afterbegin");
-  await loadHTML("/footer.html", "beforeend");
+  await loadHTML("../templates/header.html", "afterbegin");
+  await loadHTML("../templates/footer.html", "beforeend");
 
   const response = await fetch("/src/assets/products.json");
   const data = await response.json();
