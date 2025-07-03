@@ -1,4 +1,3 @@
-import { loadHTML } from './utils.js';
+import { init } from './search-utils.js';
 
-loadHTML('../templates/header.html', 'afterbegin');
-loadHTML('../templates/footer.html', 'beforeend');
+init();

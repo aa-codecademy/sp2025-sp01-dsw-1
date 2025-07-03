@@ -1,5 +1,8 @@
+// import { loadHTML } from "./utils.js";
 import { showNotification } from './notification.js';
 import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
+import { init } from './search-utils.js'; 
+init();
 
 function attachAddToCartListeners(products, gridElement) {
   gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -37,10 +40,8 @@ function attachAddToCartListeners(products, gridElement) {
   });
 }
 
-import { loadHTML } from "./utils.js";
-
-loadHTML("../templates/header.html", "afterbegin");
-loadHTML("../templates/footer.html", "beforeend");
+// loadHTML("/header.html", "afterbegin");
+// loadHTML("/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");
@@ -164,6 +165,7 @@ function filterByStock() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByAtoZ() {
@@ -173,6 +175,7 @@ function sortByAtoZ() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByZtoA() {
@@ -182,6 +185,7 @@ function sortByZtoA() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByLowestFirst() {
@@ -194,6 +198,7 @@ function sortByLowestFirst() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function sortByHighestFirst() {
@@ -206,6 +211,7 @@ function sortByHighestFirst() {
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
+  scrollToProductsSection();
 }
 
 function getCategoryFromUrl() {

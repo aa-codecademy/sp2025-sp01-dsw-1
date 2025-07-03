@@ -1,9 +1,9 @@
-import { loadHTML } from "./utils.js";
+// import { loadHTML } from "./utils.js";
 import { getCart, saveCart } from './cart-utils.js';
 import { showNotification } from './notification.js';
-
-loadHTML("../templates/header.html", "afterbegin");
-loadHTML("../templates/footer.html", "beforeend");
+// import { setupSearch } from './search-utils.js';
+import { init } from './search-utils.js'; 
+init();
 
 async function fetchProducts() {
   const response = await fetch("../assets/products.json");
@@ -16,7 +16,7 @@ function parsePrice(priceStr) {
 }
 
 function formatCurrency(num) {
-  return "Rp " + num.toLocaleString("id-ID");
+  return "$ " + num.toLocaleString("id-ID");
 }
 
 function renderCart(products) {

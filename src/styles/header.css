@@ -1,5 +1,6 @@
 /* Navigation Bar */
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +28,9 @@
 
 /* Navigation Links */
 .navbar-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 50px; /* Increased spacing between links */
 }
@@ -54,7 +58,27 @@
     cursor: pointer;
     filter: invert(0); /* Ensures black icons */
 }
+.search-container {
+  position: relative;
+}
+#search-input{
+  width: 200px;               
+  padding: 10px 15px;          
+  font-size: 12px;             
+  border: 1px solid #ddd;      
+  border-radius: 20px;         
+  outline: none;               
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;    
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
 
+#search-input:focus {
+  border-color: #b6800d;       /* highlight border on focus */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
 
 @media (max-width: 768px) {
     .navbar {
