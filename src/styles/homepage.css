@@ -69,6 +69,7 @@ body, h1, h2, h3, p, a, img {
     width: 200px;
     height: 60px;
     text-align: center;
+    text-decoration: none;
 }
 .banner-button:hover {
     background-color: #A67C37;
