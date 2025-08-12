@@ -1,163 +1,233 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.header-image {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
+/* Header and Footer spacing */
+#header-container {
+  flex-shrink: 0;
+}
+
+#footer-container {
+  margin-top: auto;
+}
+
+/* Main Register Container */
+.register-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: center;
+}
+
+/* Banner Section */
+.register-header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
 .header-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
 }
+
 .header-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000;
+  z-index: 2;
 }
 
 .header-logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .header-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #000;
-    margin: 0;
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
-.register-container {
-    width: 820px; 
-    max-width: 90%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-}
-
-.register-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
+/* Form Container */
+.register-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: -50px auto 50px auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .register-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.register-form h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.form-group {
+  width: 100%;
+  text-align: left;
 }
 
 .register-form label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-    text-align: left;
-    width: 100%;
-    max-width: 680px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 .register-form input {
-    width: 100%;
-    max-width: 680px;
-    height: 50px;
-    padding: 10px;
-    font-size: 16px; 
-    border: 1px solid #9F9F9F;
-    border-radius: 10px;
-    outline: none;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  font-size: 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
 .register-form input:focus {
-    border-color: #b68d40;
+  border-color: #b88e2f;
+  box-shadow: 0 0 0 3px rgba(184, 142, 47, 0.1);
+}
+
+.register-form input::placeholder {
+  color: #9f9f9f;
+  font-size: 16px;
 }
 
 .register-button {
-    width: 300px;
-    height: 60px;
-    margin-top: 20px;
-    background-color: #B88E2F;
-    color: #fff;
-    border: 1px solid #B88E2F;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  height: 56px;
+  margin-top: 10px;
+  background-color: #b88e2f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .register-button:hover {
-    background-color: #A67C37;
+  background-color: #a67c37;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 142, 47, 0.3);
 }
 
-footer {
-    margin-top: auto;
+.form-footer {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
 }
 
-@media (max-width: 1024px) {
-    .register-container {
-        width: 90%;
-    }
-
-    .register-form input {
-        height: 70px;
-    }
-
-    .register-button {
-        width: 250px;
-        height: 55px;
-    }
+.form-footer a {
+  color: #6b46c1;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 5px;
 }
 
+.form-footer a:hover {
+  color: #553c9a;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .register-container {
-        width: 100%;
-        padding: 10px;
-    }
+  .register-header {
+    height: 300px;
+  }
 
-    .register-form input {
-        height: 60px;
-    }
+  .header-title {
+    font-size: 36px;
+  }
 
-    .register-button {
-        width: 200px;
-        height: 50px;
-    }
+  .register-form-container {
+    margin: -30px 20px 30px 20px;
+    padding: 30px 25px;
+    border-radius: 15px;
+  }
+
+  .register-form h2 {
+    font-size: 24px;
+  }
+
+  .register-form input {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .register-button {
+    height: 50px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
-    .register-container {
-        padding: 10px;
-    }
+  .register-header {
+    height: 250px;
+  }
 
-    .register-form input {
-        height: 50px;
-    }
+  .header-title {
+    font-size: 28px;
+  }
 
-    .register-button {
-        width: 180px;
-        height: 45px;
-        font-size: 14px;
-    }
+  .header-logo {
+    width: 80px;
+  }
+
+  .register-form-container {
+    margin: -20px 15px 20px 15px;
+    padding: 25px 20px;
+  }
+
+  .register-form h2 {
+    font-size: 22px;
+  }
 }

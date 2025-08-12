@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details</title>
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/product_details.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/product_details.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
     <main class="product-details-container">
-        <section class="product-gallery">
-            <div class="product-thumbnails" id="product-thumbnails">
-            </div>
-            <div class="product-main-image">
-                <img id="main-product-image" src="" alt="Product Image">
-            </div>
-        </section>
-        <section class="product-info">
-            <h1 id="product-name"></h1>
-            <div class="product-price-rating">
-                <span class="product-price" id="product-price"></span>
-                <span class="product-rating">
-                    <span class="stars">★★★★★</span>
-                    <span class="reviews">5 Customer Review</span>
-                </span>
-            </div>
-            <p class="product-description" id="product-description"></p>
-            <div class="product-actions">
-                <div class="quantity-selector">
-                    <button id="decrease-qty" title="Decrease quantity">-</button>
-                    <input type="number" id="product-qty" value="1" min="1">
-                    <button id="increase-qty" title="">+</button>
-                </div>
-                <span id="product-stock-info" class="stock-info">In stock: 15</span>
-                <button class="add-to-cart-btn" id="add-to-cart-btn" title="">Add To Cart</button>
-            </div>
-        </section>
+      <section class="product-gallery">
+        <div class="product-thumbnails" id="product-thumbnails"></div>
+        <div class="product-main-image">
+          <img id="main-product-image" alt="Product Image" />
+        </div>
+      </section>
+      <section class="product-info">
+        <h1 id="product-name"></h1>
+        <div class="product-price-rating">
+          <span class="product-price" id="product-price"></span>
+          <span class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">5 Customer Review</span>
+          </span>
+        </div>
+        <p class="product-description" id="product-description"></p>
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <button id="decrease-qty" title="Decrease quantity">-</button>
+            <input type="number" id="product-qty" value="1" min="1" />
+            <button id="increase-qty" title="">+</button>
+          </div>
+          <span id="product-stock-info" class="stock-info">In stock: 15</span>
+          <button class="add-to-cart-btn" id="add-to-cart-btn" title="">Add To Cart</button>
+        </div>
+      </section>
     </main>
+
+    <div id="footer-container"></div>
+
     <script type="module" src="../scripts/product_details.js"></script>
-</body>
+  </body>
 </html>

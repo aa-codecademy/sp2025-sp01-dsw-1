@@ -1,113 +1,140 @@
 /* Navigation Bar */
 .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #D1EDEB;; 
-    padding: 20px 50px; /* Increased padding for better spacing */
-    font-family: 'Poppins', sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d1edeb;
+  padding: 20px 50px; /* Increased padding for better spacing */
+  font-family: "Poppins", sans-serif;
 }
 
 /* Logo Section */
 .navbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Spacing between logo image and text */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Spacing between logo image and text */
 }
 
 .logo {
-    height: 40px; /* Adjusted logo size */
+  height: 40px; /* Adjusted logo size */
 }
 
 .logo-text {
-    font-size: 24px; /* Slightly larger font size */
-    font-weight: bold;
-    color: #000; /* Black text for logo */
+  font-size: 24px; /* Slightly larger font size */
+  font-weight: bold;
+  color: #000; /* Black text for logo */
 }
 
 /* Navigation Links */
 .navbar-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 50px; /* Increased spacing between links */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 50px; /* Increased spacing between links */
 }
 
 .nav-link {
-    text-decoration: none;
-    font-size: 18px; /* Slightly larger font size */
-    color: #000; /* Black text for links */
-    font-weight: 500;
+  text-decoration: none;
+  font-size: 18px; /* Slightly larger font size */
+  color: #000; /* Black text for links */
+  font-weight: 500;
 }
 
 .nav-link:hover {
-    color: #B68D40; /* Gold hover effect */
+  color: #b68d40; /* Gold hover effect */
 }
-
 
 /* Icons Section */
 .navbar-icons {
-    display: flex;
-    gap: 25px; /* Increased spacing between icons */
+  display: flex;
+  gap: 25px; /* Increased spacing between icons */
 }
 
 .icon {
-    height: 28px; /* Slightly larger icon size */
-    cursor: pointer;
-    filter: invert(0); /* Ensures black icons */
+  height: 28px; /* Slightly larger icon size */
+  cursor: pointer;
+  filter: invert(0); /* Ensures black icons */
 }
+
+/* Search functionality styles */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .search-container {
   position: relative;
-}
-#search-input{
-  width: 200px;               
-  padding: 10px 15px;          
-  font-size: 12px;             
-  border: 1px solid #ddd;      
-  border-radius: 20px;         
-  outline: none;               
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;    
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  background-color: #fff;
+  width: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  transition: width 0.3s ease;
 }
 
-#search-input:focus {
-  border-color: #b6800d;       /* highlight border on focus */
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+.search-container.expanded {
+  width: 300px;
 }
+
+.search-container input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+
+.search-container input:focus {
+  outline: none;
+  border: 1px solid #b68d40;
+}
+
+#search-results {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+}
+
+/* Remove conflicting search styles - search functionality is handled inline in header.html */
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 5px;
-    }
-    .navbar-logo {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .navbar-links {
-        position: static;
-        transform: none;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .navbar-icons {
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        gap: 20px;
-        margin-bottom: 0;
-    }
-    .logo-text {
-        font-size: 20px;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+  }
+  .navbar-logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .navbar-links {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .navbar-icons {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 0;
+  }
+  .logo-text {
+    font-size: 20px;
+  }
 }

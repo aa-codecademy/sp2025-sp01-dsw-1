@@ -3,60 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <title>About Us - Furniro</title>
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/about_us.css" />
   </head>
   <body>
-    <div class="container">
-      <main>
-        <section class="header-image">
-          <img
-            src="../assets/banner.png"
-            alt="Header Background"
-            class="header-background"
-          />
-          <div class="header-overlay">
-            <img
-              src="../assets/images/navigation_bar/logo.png"
-              alt="Logo"
-              class="header-logo"
-            />
-            <h1 class="header-title">About Us</h1>
-          </div>
-        </section>
+    <!-- Header Container -->
+    <div id="header-container"></div>
 
-        <section class="about-us-wrapper">
-          <div class="about-us-paragraph">
-            <h4>
-              We are a team of passionate designers, makers and storytallers
-              committed to creating furniture that elevates every space it
-              touches. <br />
-              From cozy sofas to elegant clining sets, we blend timeless
-              craftsmanship with contemporary<br />
-              aesthetics to bring your home to life.
-            </h4>
-          </div>
-          <div class="">
-            <img
-              src="../assets/About-us-img.png"
-              alt="An image of our workspace"
-              id="about-us-image"
-            />
-          </div>
-          <div class="about-us-paragraph">
-            <h4>
-              Our mission is simple - to make beautifully designed furniture
-              accessible to everyone. We believe in sustainabillity, quality and
-              comfort, <br />
-              and we strive to deliver products that reflect these values at
-              every step of the journey.
-            </h4>
-          </div>
-        </section>
-      </main>
-      <script type="module" src="../scripts/about_us.js"></script>
+    <!-- Main Content -->
+    <div class="about-container">
+      <section class="about-header">
+        <img src="../assets/banner.png" alt="Header Background" class="header-background" />
+        <div class="header-overlay">
+          <img src="../assets/images/navigation_bar/logo.png" alt="Logo" class="header-logo" />
+          <h1 class="header-title">About Us</h1>
+        </div>
+      </section>
+
+      <section class="about-content">
+        <div class="about-text">
+          <h2>
+            We are a team of passionate designers, makers and storytellers committed to creating furniture that elevates every space it touches.
+          </h2>
+          <p>From cozy sofas to elegant dining sets, we blend timeless craftsmanship with contemporary aesthetics to bring your home to life.</p>
+        </div>
+        <div class="about-image">
+          <img src="../assets/About-us-img.png" alt="About Us" class="about-img" />
+        </div>
+      </section>
+
+      <section class="mission-content">
+        <div class="mission-image">
+          <img src="../assets/About-us-img.png" alt="Our Mission" class="mission-img" />
+        </div>
+        <div class="mission-text">
+          <h2>
+            Our mission is simple - to make beautifully designed furniture accessible to everyone. We believe in sustainability, quality and comfort,
+            and we strive to deliver products that reflect these values at every step of the journey.
+          </h2>
+        </div>
+      </section>
     </div>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script type="module" src="../scripts/about_us.js"></script>
   </body>
 </html>

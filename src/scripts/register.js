@@ -1,3 +1,11 @@
-import { init } from './search-utils.js';
+import { loadHTML } from "./utils.js";
+import { init } from "./search-utils.js";
 
-init();
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Register page loaded, loading header and footer...");
+  loadHTML("../templates/header.html", "header-container");
+  loadHTML("../templates/footer.html", "footer-container");
+  setTimeout(() => {
+    init();
+  }, 200);
+});
