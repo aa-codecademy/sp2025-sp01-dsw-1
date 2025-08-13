@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register - Furniture Shop</title>
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../styles/register.css" />
-  </head>
-  <body>
-    <!-- Header Container -->
-    <div id="header-container"></div>
-
-    <!-- Main Content -->
-    <div class="register-container">
-      <div class="register-header">
-        <img src="../assets/banner.png" alt="Header Background" class="header-background" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/register.css">
+</head>
+<body>
+    <section class="header-image">
+        <img src="../assets/banner.png" alt="Header Background" class="header-background">
         <div class="header-overlay">
-          <img src="../assets/images/navigation_bar/logo.png" alt="Logo" class="header-logo" />
-          <h1 class="header-title">Register</h1>
+            <img src="../assets/images/navigation_bar/logo.png" alt="Logo" class="header-logo">
+            <h1 class="header-title">Register</h1>
         </div>
-      </div>
+    </section>
+    <main class="register-container">
+        <h1 class="register-title">Create an Account</h1>
+        <form class="register-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-      <div class="register-form-container">
-        <form class="register-form" id="registerForm">
-          <h2>Create an Account</h2>
-          <div class="form-group">
-            <label for="first-name">Your Name</label>
-            <input type="text" id="first-name" name="first-name" placeholder="Enter your name" required />
-          </div>
-          <div class="form-group">
-            <label for="last-name">Surname</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Enter your surname" required />
-          </div>
-          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-          </div>
-          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required />
-          </div>
-          <button type="submit" class="register-button">Register</button>
-          <p class="form-footer">Already have an account? <a href="login.html">Login here</a></p>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="register-button">Register</button>
         </form>
-      </div>
-    </div>
-
-    <!-- Footer Container -->
-    <div id="footer-container"></div>
-
+    </main>
     <script type="module" src="../scripts/register.js"></script>
-  </body>
+</body>
+
 </html>

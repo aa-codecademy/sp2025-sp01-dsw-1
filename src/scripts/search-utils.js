@@ -1,5 +1,4 @@
-import { loadHTML } from "./utils.js";
-
+import { loadHTML } from './utils.js';
 export function setupSearch(products) {
   const searchBtn = document.getElementById("searchBtn");
   const searchContainer = document.getElementById("search-container");
@@ -28,7 +27,8 @@ export function setupSearch(products) {
   searchContainer.appendChild(suggestionBox);
 
   searchBtn.addEventListener("click", () => {
-    searchContainer.style.display = searchContainer.style.display === "none" ? "block" : "none";
+    searchContainer.style.display =
+      searchContainer.style.display === "none" ? "block" : "none";
     searchInput.focus();
   });
 
@@ -41,7 +41,9 @@ export function setupSearch(products) {
       return;
     }
 
-    const matches = products.filter((p) => p.name.toLowerCase().includes(query));
+    const matches = products.filter((p) =>
+      p.name.toLowerCase().includes(query)
+    );
 
     if (matches.length === 0) {
       suggestionBox.innerHTML = `<li style="padding: 10px; border-bottom: 1px solid #eee;">No results found</li>`;
@@ -62,12 +64,12 @@ export function setupSearch(products) {
 
       const img = document.createElement("img");
 
-      // Fix the image path to work from both contexts
       const currentPath = window.location.pathname;
-      const isInRoot = currentPath === "/" || currentPath === "/index.html";
-      const imgSrc = isInRoot ? product.image.replace("../assets/", "src/assets/") : product.image.replace("../assets/", "../assets/");
+      const isInSrcTemplates = currentPath.includes("/src/templates/");
+      img.src = isInSrcTemplates
+        ? product.image.replace("../assets/", "../assets/")
+        : product.image.replace("../assets/", "src/assets/");
 
-      img.src = imgSrc;
       img.alt = product.name;
       img.style.width = "40px";
       img.style.height = "40px";
@@ -83,9 +85,7 @@ export function setupSearch(products) {
       li.appendChild(img);
       li.appendChild(name);
       li.addEventListener("click", () => {
-        // Use correct path based on current location
-        const productUrl = isInRoot ? `./src/templates/product_details.html?id=${product.id}` : `product_details.html?id=${product.id}`;
-        window.location.href = productUrl;
+        window.location.href = `/src/templates/product_details.html?id=${product.id}`;
       });
 
       suggestionBox.appendChild(li);
@@ -100,16 +100,13 @@ export function setupSearch(products) {
     }
   });
 }
-
 export async function init() {
-  // Remove the header/footer loading from here since it's handled in homepage.js
-  // Just setup search if products are available
-  try {
-    const response = await fetch("./src/assets/products.json");
-    const data = await response.json();
-    const products = data.products;
-    setupSearch(products);
-  } catch (error) {
-    console.log("Products not loaded yet, search will be set up later");
-  }
+  await loadHTML("../templates/header.html", "afterbegin");
+  await loadHTML("../templates/footer.html", "beforeend");
+
+  const response = await fetch("/src/assets/products.json");
+  const data = await response.json();
+  const products = data.products;
+
+  setupSearch(products);
 }

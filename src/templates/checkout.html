@@ -1,75 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout - Furniro</title>
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../styles/checkout.css" />
-  </head>
-  <body>
-    <!-- Header Container -->
-    <div id="header-container"></div>
 
-    <!-- Banner Section -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/checkout.css">
+</head>
+
+<body>
     <section class="header-image">
-      <img src="../assets/banner.png" alt="Header Background" class="header-background" />
-      <div class="header-overlay">
-        <img src="../assets/images/navigation_bar/logo.png" alt="Logo" class="header-logo" />
-        <h1 class="header-title">Checkout</h1>
-      </div>
+        <img src="../assets/banner.png" alt="Header Background" class="header-background">
+        <div class="header-overlay">
+            <img src="../assets/images/navigation_bar/logo.png" alt="Logo" class="header-logo">
+            <h1 class="header-title">Checkout</h1>
+        </div>
     </section>
-
-    <!-- Main Content -->
-    <div class="checkout-container">
-      <div class="checkout-form-section">
-        <h2>Billing details</h2>
+    <main class="checkout-container">
+        <h1 class="checkout-title">Billing details</h1>
         <form class="checkout-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="first-name">First Name</label>
-              <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required />
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                </div>
             </div>
             <div class="form-group">
-              <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required />
+                <label for="street-address">Street address</label>
+                <input type="text" id="street-address" name="street-address" placeholder="Enter your street address"
+                    class="full-width" required>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="street-address">Street address</label>
-            <input type="text" id="street-address" name="street-address" placeholder="Enter your street address" required />
-          </div>
-
-          <div class="form-group">
-            <label for="city">Town / City</label>
-            <input type="text" id="city" name="city" placeholder="Enter your city" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-          </div>
-
-          <div class="form-group">
-            <label for="delivery-day">Preferred delivery day</label>
-            <input type="text" id="delivery-day" name="delivery-day" placeholder="Enter your preferred delivery day" required />
-          </div>
-
-          <button type="submit" class="checkout-button">Check Out</button>
+            <div class="form-group">
+                <label for="city">Town / City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" class="full-width" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="full-width"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" class="full-width"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-day">Preferred delivery day</label>
+                <input type="text" id="delivery-day" name="delivery-day" placeholder="Enter your preferred delivery day"
+                    class="full-width">
+            </div>
+            <button type="submit" class="checkout-button">Check Out</button>
         </form>
-      </div>
-    </div>
-
-    <!-- Footer Container -->
-    <div id="footer-container"></div>
-
+    </main>
     <script type="module" src="../scripts/checkout.js"></script>
-  </body>
+</body>
+
 </html>
