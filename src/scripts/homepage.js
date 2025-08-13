@@ -1,26 +1,8 @@
-import { loadHTML } from "./utils.js";
+// import { loadHTML } from "../scripts/utils.js";
 import { showNotification } from "./notification.js";
-import { addToCart, initCartCount, getCart } from "./cart-utils.js";
-import { initSearch } from "./search.js";
-
-// Load header and footer
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded, loading header and footer...");
-
-  // Load header and footer
-  loadHTML("./src/templates/header.html", "header-container");
-  loadHTML("./src/templates/footer.html", "footer-container");
-
-  // Wait for header and footer to load, then initialize
-  setTimeout(() => {
-    console.log("Initializing products...");
-    setupSearchAndProducts();
-    // Initialize cart count after header is loaded
-    initCartCount();
-    // Initialize search functionality after header is loaded
-    initSearch();
-  }, 200);
-});
+import { addToCart, updateCartCountIcon, getCart } from "./cart-utils.js";
+import { setupSearch } from "./search-utils.js";
+import { init } from "./search-utils.js";
 
 const mostPopularGrid = document.querySelector(".most-popular-grid");
 const categoryProductsGrid = document.querySelector(".category-products-grid");
@@ -38,7 +20,9 @@ function attachAddToCartListeners(products, gridElement) {
         const currentQty = cartItem ? cartItem.quantity : 0;
 
         if (product.stock === 0) {
-          showNotification ? showNotification("Sorry, this product is out of stock.") : alert("Sorry, this product is out of stock.");
+          showNotification
+            ? showNotification("Sorry, this product is out of stock.")
+            : alert("Sorry, this product is out of stock.");
           return;
         }
 
@@ -50,8 +34,10 @@ function attachAddToCartListeners(products, gridElement) {
         }
 
         addToCart(product, 1);
-        showNotification ? showNotification(`${product.name} added to cart!`) : alert(`${product.name} added to cart!`);
-        // updateCartCountIcon && updateCartCountIcon(); // This line is removed as per the edit hint
+        showNotification
+          ? showNotification(`${product.name} added to cart!`)
+          : alert(`${product.name} added to cart!`);
+        updateCartCountIcon && updateCartCountIcon();
       }
     });
   });
@@ -63,7 +49,8 @@ function renderProductCards(products, gridElement) {
     let badgeHTML = "";
     if (product.discount) {
       const discountPercentage = Math.round(
-        ((parseFloat(product.discount.replace(/[^0-9.-]+/g, "")) - parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) /
+        ((parseFloat(product.discount.replace(/[^0-9.-]+/g, "")) -
+          parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) /
           parseFloat(product.discount.replace(/[^0-9.-]+/g, ""))) *
           100
       );
@@ -72,24 +59,27 @@ function renderProductCards(products, gridElement) {
       badgeHTML = `<div class="product-badge new">New</div>`;
     }
 
-    // Fix the image path to work from root directory
-    const fixedImagePath = product.image.replace("../assets/", "src/assets/");
-
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.setAttribute("data-product-id", product.id);
     productCard.innerHTML = `
       ${badgeHTML}
-      <img src="${fixedImagePath}" alt="${product.name}" class="product-image">
+      <img src="${product.image}" alt="${product.name}" class="product-image">
       <div class="product-info">
         <p class="product-name">${product.name}</p>
         <p class="product-description">${product.description}</p>
         <p class="product-price">
           ${product.price}
-          ${product.discount ? `<span class="product-discount">${product.discount}</span>` : ""}
+          ${
+            product.discount
+              ? `<span class="product-discount">${product.discount}</span>`
+              : ""
+          }
         </p>
       </div>
-      <button class="add-to-cart" ${product.stock === 0 ? "disabled title='Out of stock'" : ""}>
+      <button class="add-to-cart" ${
+        product.stock === 0 ? "disabled title='Out of stock'" : ""
+      }>
         ${product.stock === 0 ? "Out of Stock" : "Add to Cart"}
       </button>
     `;
@@ -98,12 +88,15 @@ function renderProductCards(products, gridElement) {
 
   gridElement.querySelectorAll(".product-card").forEach((card) => {
     card.addEventListener("click", function (event) {
-      if (event.target.closest(".add-to-cart") || event.target.closest(".product-link")) {
+      if (
+        event.target.closest(".add-to-cart") ||
+        event.target.closest(".product-link")
+      ) {
         return;
       }
       const productId = card.getAttribute("data-product-id");
       if (productId) {
-        window.location.href = `src/templates/product_details.html?id=${productId}`;
+        window.location.href = `product_details.html?id=${productId}`;
       }
     });
   });
@@ -111,32 +104,44 @@ function renderProductCards(products, gridElement) {
   attachAddToCartListeners(products, gridElement);
 }
 
-function setupSearchAndProducts() {
-  fetch("src/assets/products.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const products = data.products;
+fetch("../assets/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const products = data.products;
 
-      const mostPopularProducts = products.filter((product) => product.IsMostPopular);
-      renderProductCards(mostPopularProducts.slice(0, 8), mostPopularGrid);
+    setupSearch(products);
 
-      function filterAndRenderCategory(categoryName) {
-        const filtered = products.filter((product) => product.category && product.category.toLowerCase() === categoryName.toLowerCase());
-        renderProductCards(filtered, categoryProductsGrid);
-      }
+    const mostPopularProducts = products.filter(
+      (product) => product.IsMostPopular
+    );
+    renderProductCards(mostPopularProducts.slice(0, 8), mostPopularGrid);
 
-      document.getElementById("dining-room-btn")?.addEventListener("click", (e) => {
+    function filterAndRenderCategory(categoryName) {
+      const filtered = products.filter(
+        (product) =>
+          product.category &&
+          product.category.toLowerCase() === categoryName.toLowerCase()
+      );
+      renderProductCards(filtered, categoryProductsGrid);
+    }
+
+    document
+      .getElementById("dining-room-btn")
+      ?.addEventListener("click", (e) => {
         e.preventDefault();
         filterAndRenderCategory("dining-room");
       });
-      document.getElementById("living-room-btn")?.addEventListener("click", (e) => {
+    document
+      .getElementById("living-room-btn")
+      ?.addEventListener("click", (e) => {
         e.preventDefault();
         filterAndRenderCategory("living-room");
       });
-      document.getElementById("bedroom-btn")?.addEventListener("click", (e) => {
-        e.preventDefault();
-        filterAndRenderCategory("bedroom");
-      });
-    })
-    .catch((error) => console.error("Error fetching product data:", error));
-}
+    document.getElementById("bedroom-btn")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      filterAndRenderCategory("bedroom");
+    });
+  })
+  .catch((error) => console.error("Error fetching product data:", error));
+
+init();
