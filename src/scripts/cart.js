@@ -1,9 +1,27 @@
-// import { loadHTML } from "./utils.js";
-import { getCart, saveCart } from './cart-utils.js';
-import { showNotification } from './notification.js';
-// import { setupSearch } from './search-utils.js';
-import { init } from './search-utils.js'; 
-init();
+import { loadHTML } from "./utils.js";
+import { getCart, saveCart, initCartCount } from "./cart-utils.js";
+import { showNotification } from "./notification.js";
+import { init } from "./search-utils.js";
+import { initSearch } from "./search.js";
+
+// Load header and footer
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Cart page loaded, loading header and footer...");
+
+  // Load header and footer - utils.js will automatically adjust paths
+  loadHTML("../templates/header.html", "header-container");
+  loadHTML("../templates/footer.html", "footer-container");
+
+  // Wait for header/footer to load, then initialize cart
+  setTimeout(() => {
+    // Initialize cart count after header is loaded
+    initCartCount();
+    init(); // Assuming init() is for search, still needed
+    // Initialize search functionality after header is loaded
+    initSearch();
+    initializeCart();
+  }, 200);
+});
 
 async function fetchProducts() {
   const response = await fetch("../assets/products.json");
@@ -76,73 +94,69 @@ function renderCart(products) {
   document.getElementById("total-value").textContent = formatCurrency(subtotal);
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
+async function initializeCart() {
   const products = await fetchProducts();
   renderCart(products);
 
-  document
-    .getElementById("cart-items")
-    .addEventListener("click", function (event) {
-      const cart = getCart();
-      if (event.target.classList.contains("increment")) {
-        let itemIndex = Number(event.target.dataset.idx);
-        let cartItem = cart[itemIndex];
-        let product = products.find(p => String(p.id) === String(cartItem.id));
-        if (cartItem.quantity < product.stock) {
-          cartItem.quantity++;
-          saveCart(cart);
-          renderCart(products);
+  document.getElementById("cart-items").addEventListener("click", function (event) {
+    const cart = getCart();
+    if (event.target.classList.contains("increment")) {
+      let itemIndex = Number(event.target.dataset.idx);
+      let cartItem = cart[itemIndex];
+      let product = products.find((p) => String(p.id) === String(cartItem.id));
+      if (cartItem.quantity < product.stock) {
+        cartItem.quantity++;
+        saveCart(cart);
+        renderCart(products);
+      } else {
+        if (typeof showNotification === "function") {
+          showNotification(`Sorry, only ${product.stock} items available.`);
         } else {
-          if (typeof showNotification === "function") {
-            showNotification(`Sorry, only ${product.stock} items available.`);
-          } else {
-            alert(`Sorry, only ${product.stock} items available.`);
-          }
+          alert(`Sorry, only ${product.stock} items available.`);
         }
       }
-      if (event.target.classList.contains("decrement")) {
-        let itemIndex = Number(event.target.dataset.idx);
-        let cartItem = cart[itemIndex];
-        if (cartItem.quantity > 1) {
-          cartItem.quantity--;
-          saveCart(cart);
-          renderCart(products);
-        }
-      }
-      if (event.target.classList.contains("cart-remove-btn")) {
-        let itemIndex = Number(event.target.dataset.idx);
-        cart.splice(itemIndex, 1);
+    }
+    if (event.target.classList.contains("decrement")) {
+      let itemIndex = Number(event.target.dataset.idx);
+      let cartItem = cart[itemIndex];
+      if (cartItem.quantity > 1) {
+        cartItem.quantity--;
         saveCart(cart);
         renderCart(products);
       }
-    });
+    }
+    if (event.target.classList.contains("cart-remove-btn")) {
+      let itemIndex = Number(event.target.dataset.idx);
+      cart.splice(itemIndex, 1);
+      saveCart(cart);
+      renderCart(products);
+    }
+  });
 
-  document
-    .getElementById("cart-items")
-    .addEventListener("input", function (event) {
-      if (event.target.classList.contains("cart-qty-input")) {
-        const cart = getCart();
-        let itemIndex = Number(event.target.dataset.idx);
-        let newQuantity = Number(event.target.value);
-        let product = products.find(function (p) {
-          return String(p.id) === String(cart[itemIndex].id);
-        });
-        if (isNaN(newQuantity) || newQuantity < 1) {
-          newQuantity = 1;
-        }
-        if (newQuantity > product.stock) {
-          newQuantity = product.stock;
-          if (typeof showNotification === "function") {
-            showNotification(`Sorry, only ${product.stock} items available.`);
-          } else {
-            alert(`Sorry, only ${product.stock} items available.`);
-          }
-        }
-        cart[itemIndex].quantity = newQuantity;
-        saveCart(cart);
-        renderCart(products);
+  document.getElementById("cart-items").addEventListener("input", function (event) {
+    if (event.target.classList.contains("cart-qty-input")) {
+      const cart = getCart();
+      let itemIndex = Number(event.target.dataset.idx);
+      let newQuantity = Number(event.target.value);
+      let product = products.find(function (p) {
+        return String(p.id) === String(cart[itemIndex].id);
+      });
+      if (isNaN(newQuantity) || newQuantity < 1) {
+        newQuantity = 1;
       }
-    });
+      if (newQuantity > product.stock) {
+        newQuantity = product.stock;
+        if (typeof showNotification === "function") {
+          showNotification(`Sorry, only ${product.stock} items available.`);
+        } else {
+          alert(`Sorry, only ${product.stock} items available.`);
+        }
+      }
+      cart[itemIndex].quantity = newQuantity;
+      saveCart(cart);
+      renderCart(products);
+    }
+  });
 
   const checkoutBtn = document.querySelector(".checkout-btn");
   if (checkoutBtn && checkoutBtn.tagName === "BUTTON") {
@@ -150,4 +164,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.location.href = "checkout.html";
     });
   }
-});
+}

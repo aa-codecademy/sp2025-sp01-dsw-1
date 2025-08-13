@@ -1,8 +1,26 @@
-// import { loadHTML } from "./utils.js";
-import { showNotification } from './notification.js';
-import { addToCart, updateCartCountIcon, getCart } from './cart-utils.js';
-import { init } from './search-utils.js'; 
-init();
+import { loadHTML } from "./utils.js";
+import { showNotification } from "./notification.js";
+import { addToCart, initCartCount } from "./cart-utils.js";
+import { init } from "./search-utils.js";
+import { initSearch } from "./search.js";
+
+// Load header and footer
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Category page loaded, loading header and footer...");
+
+  // Load header and footer - utils.js will automatically adjust paths
+  loadHTML("../templates/header.html", "header-container");
+  loadHTML("../templates/footer.html", "footer-container");
+
+  // Initialize search functionality and cart
+  setTimeout(() => {
+    init();
+    // Initialize cart count after header is loaded
+    initCartCount();
+    // Initialize search functionality after header is loaded
+    initSearch();
+  }, 200);
+});
 
 function attachAddToCartListeners(products, gridElement) {
   gridElement.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -10,16 +28,14 @@ function attachAddToCartListeners(products, gridElement) {
       event.stopPropagation();
       const card = btn.closest(".product-card");
       const productId = Number(card.getAttribute("data-product-id"));
-      const product = products.find(p => p.id === productId);
+      const product = products.find((p) => p.id === productId);
       if (product) {
         const cart = getCart();
-        const cartItem = cart.find(item => item.id === product.id);
+        const cartItem = cart.find((item) => item.id === product.id);
         const currentQty = cartItem ? cartItem.quantity : 0;
 
         if (product.stock === 0) {
-          showNotification
-            ? showNotification("Sorry, this product is out of stock.")
-            : alert("Sorry, this product is out of stock.");
+          showNotification ? showNotification("Sorry, this product is out of stock.") : alert("Sorry, this product is out of stock.");
           return;
         }
 
@@ -31,17 +47,12 @@ function attachAddToCartListeners(products, gridElement) {
         }
 
         addToCart(product, 1);
-        showNotification
-          ? showNotification(`${product.name} added to cart!`)
-          : alert(`${product.name} added to cart!`);
+        showNotification ? showNotification(`${product.name} added to cart!`) : alert(`${product.name} added to cart!`);
         updateCartCountIcon && updateCartCountIcon();
       }
     });
   });
 }
-
-// loadHTML("/header.html", "afterbegin");
-// loadHTML("/footer.html", "beforeend");
 
 const productGrid = document.querySelector(".product-grid");
 const paginationContainer = document.getElementById("pagination");
@@ -75,8 +86,7 @@ function renderProducts(page) {
     let badgeHTML = "";
     if (product.discount) {
       const discountPercentage = Math.round(
-        ((parseFloat(product.discount.replace(/[^0-9.-]+/g, "")) -
-          parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) /
+        ((parseFloat(product.discount.replace(/[^0-9.-]+/g, "")) - parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) /
           parseFloat(product.discount.replace(/[^0-9.-]+/g, ""))) *
           100
       );
@@ -88,19 +98,19 @@ function renderProducts(page) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.setAttribute("data-product-id", product.id);
+
+    // Fix the image path to work from templates directory
+    const fixedImagePath = product.image.replace("../assets/", "../assets/");
+
     productCard.innerHTML = `
       ${badgeHTML}
-      <img src="${product.image}" alt="${product.name}" class="product-image">
+      <img src="${fixedImagePath}" alt="${product.name}" class="product-image">
       <div class="product-info">
         <p class="product-name">${product.name}</p>
         <p class="product-description">${product.description}</p>
         <p class="product-price">
           ${product.price}
-          ${
-            product.discount
-              ? `<span class="product-discount">${product.discount}</span>`
-              : ""
-          }
+          ${product.discount ? `<span class="product-discount">${product.discount}</span>` : ""}
         </p>
       </div>
       <button class="add-to-cart" ${product.stock === 0 ? "disabled title='Out of stock'" : ""}>
@@ -112,9 +122,7 @@ function renderProducts(page) {
 
   productGrid.querySelectorAll(".product-card").forEach((card) => {
     card.addEventListener("click", function (event) {
-      if (
-        event.target.closest(".add-to-cart")
-      ) {
+      if (event.target.closest(".add-to-cart")) {
         return;
       }
       const productId = card.getAttribute("data-product-id");
@@ -169,9 +177,7 @@ function filterByStock() {
 }
 
 function sortByAtoZ() {
-  filteredProducts = [...filteredProducts].sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  filteredProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name));
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
@@ -179,9 +185,7 @@ function sortByAtoZ() {
 }
 
 function sortByZtoA() {
-  filteredProducts = [...filteredProducts].sort((a, b) =>
-    b.name.localeCompare(a.name)
-  );
+  filteredProducts = [...filteredProducts].sort((a, b) => b.name.localeCompare(a.name));
   renderProducts(1);
   setupPagination(filteredProducts.length);
   setActivePage(1);
@@ -285,10 +289,10 @@ highestFirstSort?.addEventListener("click", (e) => {
 });
 
 function scrollToProductsSection() {
-  const section = document.getElementById('products-section');
-  if (section) section.scrollIntoView({ behavior: 'smooth' });
+  const section = document.getElementById("products-section");
+  if (section) section.scrollIntoView({ behavior: "smooth" });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   updateCartCountIcon();
 });
