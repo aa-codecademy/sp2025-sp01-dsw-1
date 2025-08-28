@@ -1,688 +1,691 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Syltherine",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": "$ 500.00",
-      "image": "../src/assets/images/living-room/Syltherine.png",
-      "description": "Stylish cafe chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Syltherine.png",
-        "../src/assets/images/living-room/Syltherine-1.png",
-        "../src/assets/images/living-room/Syltherine-2.png"
-      ],
-      "stock": 11,
-      "IsMostPopular": true
-    },
-    {
-      "id": 2,
-      "name": "Leviosa",
-      "category": "living-room",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Leviosa-1.png",
-      "description": "Stylish cafe chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Leviosa-1.png",
-        "../src/assets/images/living-room/Leviosa-2.png",
-        "../src/assets/images/living-room/Leviosa-3.png"
-      ],
-      "stock": 8,
-      "IsMostPopular": false
-    },
-    {
-      "id": 3,
-      "name": "Lolito",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": "$ 480.00",
-      "image": "../src/assets/images/living-room/Lolito-1.png",
-      "description": "Luxury big sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Lolito-1.png",
-        "../src/assets/images/living-room/Lolito-2.png",
-        "../src/assets/images/living-room/Lolito-3.png"
-      ],
-      "stock": 5,
-      "IsMostPopular": false
-    },
-    {
-      "id": 4,
-      "name": "Respira",
-      "category": "living-room",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Respira-1.png",
-      "description": "Outdoor bar table and stool",
-      "imageUrl": [
-        "../src/assets/images/living-room/Respira-1.png",
-        "../src/assets/images/living-room/Respira-2.png",
-        "../src/assets/images/living-room/Respira-3.png"
-      ],
-      "stock": 15,
-      "IsMostPopular": true
-    },
-    {
-      "id": 5,
-      "name": "Grifo",
-      "category": "living-room",
-      "price": "$ 280.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Grifo-3.png",
-      "description": "Bar Chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Grifo-1.png",
-        "../src/assets/images/living-room/Grifo-2.png",
-        "../src/assets/images/living-room/Grifo-3.png"
-      ],
-      "stock": 20,
-      "IsMostPopular": true
-    },
-    {
-      "id": 6,
-      "name": "Muggo",
-      "category": "living-room",
-      "price": "$ 150.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Muggo-1.png",
-      "description": "Table",
-      "imageUrl": [
-        "../src/assets/images/living-room/Muggo-1.png",
-        "../src/assets/images/living-room/Muggo-2.png",
-        "../src/assets/images/living-room/Muggo-3.png"
-      ],
-      "stock": 50,
-      "IsMostPopular": true
-    },
-    {
-      "id": 7,
-      "name": "Pingky",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": "$ 600.00",
-      "image": "../src/assets/images/living-room/Pingky-1.png",
-      "description": "Caffee table",
-      "imageUrl": [
-        "../src/assets/images/living-room/Pingky-1.png",
-        "../src/assets/images/living-room/Pingky-2.png",
-        "../src/assets/images/living-room/Pingky-3.png"
-      ],
-      "stock": 3,
-      "IsMostPopular": true
-    },
-    {
-      "id": 8,
-      "name": "Potty",
-      "category": "living-room",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Potty-1.png",
-      "description": "Consoli",
-      "imageUrl": [
-        "../src/assets/images/living-room/Potty-1.png",
-        "../src/assets/images/living-room/Potty-2.png",
-        "../src/assets/images/living-room/Potty-3.png"
-      ],
-      "stock": 25,
-      "IsMostPopular": true
-    },
-    {
-      "id": 9,
-      "name": "Beletto",
-      "category": "bedroom",
-      "price": "$ 440,000",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Beletto-1.png",
-      "description": "Wooden Nightstand",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Beletto-1.png",
-        "../src/assets/images/bedroom/Beletto-2.png",
-        "../src/assets/images/bedroom/Beletto-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 10,
-      "name": "Childretto",
-      "category": "bedroom",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Childretto-1.png",
-      "description": "Children's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Childretto-1.png",
-        "../src/assets/images/bedroom/Childretto-2.png",
-        "../src/assets/images/bedroom/Childretto-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 11,
-      "name": "Rumstando",
-      "category": "bedroom",
-      "price": "$ 550.00",
-      "discount": "$ 700.00",
-      "image": "../src/assets/images/bedroom/Rumstando-1.png",
-      "description": "White Nightstand",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Rumstando-1.png",
-        "../src/assets/images/bedroom/Rumstando-2.png",
-        "../src/assets/images/bedroom/Rumstando-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 12,
-      "name": "Kitchenetto",
-      "category": "dining-room",
-      "price": "$ 400.00",
-      "discount": "$ 600.00",
-      "image": "../src/assets/images/dining-room/Kitchenetto-1.png",
-      "description": "Club Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Kitchenetto-1.png",
-        "../src/assets/images/dining-room/Kitchenetto-2.png",
-        "../src/assets/images/dining-room/Kitchenetto-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 13,
-      "name": "Lambeto",
-      "category": "dining-room",
-      "price": "$ 400.00",
-      "discount": "$ 560.00",
-      "image": "../src/assets/images/dining-room/Lambeto.png",
-      "description": "Dining Table Lamp",
-      "imageUrl": ["../src/assets/images/dining-room/Lambeto.png"],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 14,
-      "name": "Trapezaretto",
-      "category": "dining-room",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Trapezaretto-1.png",
-      "description": "Green Dining Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Trapezaretto-1.png",
-        "../src/assets/images/dining-room/Trapezaretto-2.png",
-        "../src/assets/images/dining-room/Trapezaretto-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 15,
-      "name": "Rico-Ottoman",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Rico-Ottoman.png",
-      "description": "Nice Sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Rico-Ottoman.png",
-        "../src/assets/images/living-room/Rico-Ottoman-2.png",
-        "../src/assets/images/living-room/Rico-Ottoman-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 16,
-      "name": "Rico-2",
-      "category": "living-room",
-      "price": "$ 600,000",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Rico-2.png",
-      "description": "Good Sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Rico-2.png",
-        "../src/assets/images/living-room/Rico-2-2.png",
-        "../src/assets/images/living-room/Rico-2-3.png"
-      ],
-      "stock": 1,
-      "IsMostPopular": false
-    },
-    {
-      "id": 17,
-      "name": "Catena-1",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Catena-1.png",
-      "description": "Confortable Sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Catena-1.png",
-        "../src/assets/images/living-room/Catena-1-2.png",
-        "../src/assets/images/living-room/Catena-1-3.png"
-      ],
-      "stock": 0,
-      "IsMostPopular": false
-    },
-    {
-      "id": 18,
-      "name": "Catena-2",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Catena-2.png",
-      "description": "Foam Sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Catena-2.png",
-        "../src/assets/images/living-room/Catena-2-2.png",
-        "../src/assets/images/living-room/Catena-2-3.png"
-      ],
-      "stock": 5,
-      "IsMostPopular": false
-    },
-    {
-      "id": 19,
-      "name": "Sand/black",
-      "category": "living-room",
-      "price": "$ 270.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Sandblack.png",
-      "description": "Black and White Sofa",
-      "imageUrl": [
-        "../src/assets/images/living-room/Sandblack.png",
-        "../src/assets/images/living-room/Sandblack-2.png",
-        "../src/assets/images/living-room/Sandblack-3.png"
-      ],
-      "stock": 3,
-      "IsMostPopular": false
-    },
-    {
-      "id": 20,
-      "name": "Nesten-Lounge-Chair",
-      "category": "living-room",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Nesten-Lounge-Chair.png",
-      "description": "Soft Chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Nesten-Lounge-Chair.png",
-        "../src/assets/images/living-room/Nesten-Lounge-Chair-2.png",
-        "../src/assets/images/living-room/Nesten-Lounge-Chair-3.png"
-      ],
-      "stock": 13,
-      "IsMostPopular": true
-    },
-    {
-      "id": 21,
-      "name": "Buur-Lounge-Chair",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": "$ 480.00",
-      "image": "../src/assets/images/living-room/Buur-Lounge-Chair.png",
-      "description": "Soft Green Chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Buur-Lounge-Chair.png",
-        "../src/assets/images/living-room/Buur-Lounge-Chair-2.png",
-        "../src/assets/images/living-room/Buur-Lounge-Chair-3.png"
-      ],
-      "stock": 3,
-      "IsMostPopular": true
-    },
-    {
-      "id": 22,
-      "name": "Rouli-Center-Module",
-      "category": "living-room",
-      "price": "$ 300.00",
-      "discount": "$ 560.00",
-      "image": "../src/assets/images/living-room/Rouli-Center-Module.png",
-      "description": "Soft Green Chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Rouli-Center-Module.png",
-        "../src/assets/images/living-room/Rouli-Center-Module-2.png",
-        "../src/assets/images/living-room/Rouli-Center-Module-3.png"
-      ],
-      "stock": 31,
-      "IsMostPopular": false
-    },
-    {
-      "id": 23,
-      "name": "Rico",
-      "category": "living-room",
-      "price": "$ 400.00",
-      "discount": null,
-      "image": "../src/assets/images/living-room/Rico.png",
-      "description": "Soft Chair",
-      "imageUrl": [
-        "../src/assets/images/living-room/Rico.png",
-        "../src/assets/images/living-room/Rico-1.png",
-        "../src/assets/images/living-room/Rico-3.png"
-      ],
-      "stock": 2,
-      "IsMostPopular": false
-    },
-    {
-      "id": 24,
-      "name": "Wooden",
-      "category": "dining-room",
-      "price": "$ 400.00",
-      "discount": "$ 590.00",
-      "image": "../src/assets/images/dining-room/Wooden.png",
-      "description": "Dining Chair",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Wooden.png",
-        "../src/assets/images/dining-room/Wooden-2.png",
-        "../src/assets/images/dining-room/Wooden-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 25,
-      "name": "Black-widow",
-      "category": "dining-room",
-      "price": "$ 400,000",
-      "discount": "$ 670,000",
-      "image": "../src/assets/images/dining-room/Black-widow.png",
-      "description": "Dining Black Chair",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Black-widow.png",
-        "../src/assets/images/dining-room/Black-widow-2.png",
-        "../src/assets/images/dining-room/Black-widow-3.png"
-      ],
-      "stock": 1,
-      "IsMostPopular": false
-    },
-    {
-      "id": 26,
-      "name": "Elegant",
-      "category": "dining-room",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Elegant.png",
-      "description": "Dining Good Chair",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Elegant.png",
-        "../src/assets/images/dining-room/Elegant-2.png",
-        "../src/assets/images/dining-room/Elegant-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 27,
-      "name": "Sandblack",
-      "category": "dining-room",
-      "price": "$ 150.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Sandblack.png",
-      "description": "Black and white chair",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Sandblack.png",
-        "../src/assets/images/dining-room/Sandblack-2.png",
-        "../src/assets/images/dining-room/Sandblack-3.png"
-      ],
-      "stock": 1,
-      "IsMostPopular": false
-    },
-    {
-      "id": 28,
-      "name": "Rico",
-      "category": "dining-room",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Rico.png",
-      "description": "Elegant chair",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Rico.png",
-        "../src/assets/images/dining-room/Rico-2.png",
-        "../src/assets/images/dining-room/Rico-3.png"
-      ],
-      "stock": 10,
-      "IsMostPopular": false
-    },
-    {
-      "id": 29,
-      "name": "Aukko ",
-      "category": "dining-room",
-      "price": "$ 240.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Aukko.png",
-      "description": "Wooden Dining Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Aukko.png",
-        "../src/assets/images/dining-room/Aukko-2.png",
-        "../src/assets/images/dining-room/Aukko-3.png"
-      ],
-      "stock": 13,
-      "IsMostPopular": false
-    },
-    {
-      "id": 30,
-      "name": "Oar Coffee",
-      "category": "dining-room",
-      "price": "$ 300.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/OarCoffee.png",
-      "description": "Wooden Dining Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/OarCoffee.png",
-        "../src/assets/images/dining-room/OarCoffee-2.png",
-        "../src/assets/images/dining-room/OarCoffee-3.png"
-      ],
-      "stock": 13,
-      "IsMostPopular": false
-    },
-    {
-      "id": 31,
-      "name": "Burl-Coffee",
-      "category": "dining-room",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Burl-Coffee-1.png",
-      "description": "Good Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Burl-Coffee-1.png",
-        "../src/assets/images/dining-room/Burl-Coffee-2.png",
-        "../src/assets/images/dining-room/Burl-Coffee-3.png"
-      ],
-      "stock": 0,
-      "IsMostPopular": false
-    },
-    {
-      "id": 32,
-      "name": "Staffa-Coffee",
-      "category": "dining-room",
-      "price": "$ 200,000",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Staffa-Coffee.png",
-      "description": "Coffe Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Staffa-Coffee.png",
-        "../src/assets/images/dining-room/Staffa-Coffee-2.png",
-        "../src/assets/images/dining-room/Staffa-Coffee-3.png"
-      ],
-      "stock": 10,
-      "IsMostPopular": true
-    },
-    {
-      "id": 33,
-      "name": "Pylo-Console",
-      "category": "dining-room",
-      "price": "$ 340.00",
-      "discount": null,
-      "image": "../src/assets/images/dining-room/Pylo-Console.png",
-      "description": "Small Table",
-      "imageUrl": [
-        "../src/assets/images/dining-room/Pylo-Console.png",
-        "../src/assets/images/dining-room/Pylo-Console-2.png",
-        "../src/assets/images/dining-room/Pylo-Console-3.png"
-      ],
-      "stock": 1,
-      "IsMostPopular": true
-    },
-    {
-      "id": 34,
-      "name": "Tarva",
-      "category": "bedroom",
-      "price": "$ 220.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Tarva.png",
-      "description": "Children's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Tarva.png",
-        "../src/assets/images/bedroom/Tarva-2.png",
-        "../src/assets/images/bedroom/Tarva-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 35,
-      "name": "Malm",
-      "category": "bedroom",
-      "price": "$ 180.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Malm.png",
-      "description": "Children's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Malm.png",
-        "../src/assets/images/bedroom/Malm-2.png",
-        "../src/assets/images/bedroom/Malm-3.png"
-      ],
-      "stock": 42,
-      "IsMostPopular": false
-    },
-    {
-      "id": 36,
-      "name": "Retro",
-      "category": "bedroom",
-      "price": "$ 1100.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Retro.png",
-      "description": "King Size Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Retro.png",
-        "../src/assets/images/bedroom/Retro-2.png",
-        "../src/assets/images/bedroom/Retro-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 37,
-      "name": "Slatino",
-      "category": "bedroom",
-      "price": "$ 500,000",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Slatino-1.png",
-      "description": "Old Timer",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Slatino-1.png",
-        "../src/assets/images/bedroom/Slatino-1.png",
-        "../src/assets/images/bedroom/Slatino-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 38,
-      "name": "Brimnes",
-      "category": "bedroom",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Brimnes.png",
-      "description": "Brimnes Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Brimnes.png",
-        "../src/assets/images/bedroom/Brimnes-2.png",
-        "../src/assets/images/bedroom/Brimnes-3.png"
-      ],
-      "stock": 1,
-      "IsMostPopular": true
-    },
-    {
-      "id": 39,
-      "name": "Nordli",
-      "category": "bedroom",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Nordli.png",
-      "description": "Nordli  Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Nordli.png",
-        "../src/assets/images/bedroom/Nordli-2.png",
-        "../src/assets/images/bedroom/Nordli-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 40,
-      "name": "Idanas",
-      "category": "bedroom",
-      "price": "$ 500.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Idanas.png",
-      "description": "Idanas Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Idanas.png",
-        "../src/assets/images/bedroom/Idanas-2.png",
-        "../src/assets/images/bedroom/Idanas-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": false
-    },
-    {
-      "id": 41,
-      "name": "Vitrina",
-      "category": "bedroom",
-      "price": "$ 200.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Vitrina.png",
-      "description": "Vitrina's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Vitrina.png",
-        "../src/assets/images/bedroom/Vitrina-2.png",
-        "../src/assets/images/bedroom/Vitrina-3.png"
-      ],
-      "stock": 4,
-      "IsMostPopular": true
-    },
-    {
-      "id": 42,
-      "name": "Talasi",
-      "category": "bedroom",
-      "price": "$ 660.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Talasi.png",
-      "description": "Talasi's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Talasi.png",
-        "../src/assets/images/bedroom/Talasi-2.png",
-        "../src/assets/images/bedroom/Talasi-3.png"
-      ],
-      "stock": 0,
-      "IsMostPopular": true
-    },
-    {
-      "id": 43,
-      "name": "Utaker",
-      "category": "bedroom",
-      "price": "$ 530.00",
-      "discount": null,
-      "image": "../src/assets/images/bedroom/Utaker.png",
-      "description": "Utaker's Bed",
-      "imageUrl": [
-        "../src/assets/images/bedroom/Utaker.png",
-        "../src/assets/images/bedroom/Utaker-2.png",
-        "../src/assets/images/bedroom/Utaker-3.png"
-      ],
-      "stock": 5,
-      "IsMostPopular": false
-    }
-  ]
-}
+    "products": [
+        {
+            "id": 1,
+            "name": "Syltherine",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": "$ 500.00",
+            "image": "../assets/images/living-room/Syltherine.png",
+            "description": "Stylish cafe chair",
+            "imageUrl": [
+                "../assets/images/living-room/Syltherine.png",
+                "../assets/images/living-room/Syltherine-1.png",
+                "../assets/images/living-room/Syltherine-2.png"
+            ],
+            "stock": 11,
+            "IsMostPopular": true
+        },
+        {
+            "id": 2,
+            "name": "Leviosa",
+            "category": "living-room",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Leviosa-1.png",
+            "description": "Stylish cafe chair",
+            "imageUrl": [
+                "../assets/images/living-room/Leviosa-1.png",
+                "../assets/images/living-room/Leviosa-2.png",
+                "../assets/images/living-room/Leviosa-3.png"
+            ],
+            "stock": 8,
+            "IsMostPopular": false
+        },
+        {
+            "id": 3,
+            "name": "Lolito",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": "$ 480.00",
+            "image": "../assets/images/living-room/Lolito-1.png",
+            "description": "Luxury big sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Lolito-1.png",
+                "../assets/images/living-room/Lolito-2.png",
+                "../assets/images/living-room/Lolito-3.png"
+            ],
+            "stock": 5,
+            "IsMostPopular": false
+        },
+        {
+            "id": 4,
+            "name": "Respira",
+            "category": "living-room",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Respira-1.png",
+            "description": "Outdoor bar table and stool",
+            "imageUrl": [
+                "../assets/images/living-room/Respira-1.png",
+                "../assets/images/living-room/Respira-2.png",
+                "../assets/images/living-room/Respira-3.png"
+            ],
+            "stock": 15,
+            "IsMostPopular": true
+        },
+        {
+            "id": 5,
+            "name": "Grifo",
+            "category": "living-room",
+            "price": "$ 280.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Grifo-3.png",
+            "description": "Bar Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Grifo-1.png",
+                "../assets/images/living-room/Grifo-2.png",
+                "../assets/images/living-room/Grifo-3.png"
+            ],
+            "stock": 20,
+            "IsMostPopular": true
+        },
+        {
+            "id": 6,
+            "name": "Muggo",
+            "category": "living-room",
+            "price": "$ 150.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Muggo-1.png",
+            "description": "Table",
+            "imageUrl": [
+                "../assets/images/living-room/Muggo-1.png",
+                "../assets/images/living-room/Muggo-2.png",
+                "../assets/images/living-room/Muggo-3.png"
+            ],
+            "stock": 50,
+            "IsMostPopular": true
+        },
+        {
+            "id": 7,
+            "name": "Pingky",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": "$ 600.00",
+            "image": "../assets/images/living-room/Pingky-1.png",
+            "description": "Caffee table",
+            "imageUrl": [
+                "../assets/images/living-room/Pingky-1.png",
+                "../assets/images/living-room/Pingky-2.png",
+                "../assets/images/living-room/Pingky-3.png"
+            ],
+            "stock": 3,
+            "IsMostPopular": true
+        },
+        {
+            "id": 8,
+            "name": "Potty",
+            "category": "living-room",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Potty-1.png",
+            "description": "Consoli",
+            "imageUrl": [
+                "../assets/images/living-room/Potty-1.png",
+                "../assets/images/living-room/Potty-2.png",
+                "../assets/images/living-room/Potty-3.png"
+            ],
+            "stock": 25,
+            "IsMostPopular": true
+        },
+        {
+            "id": 9,
+            "name": "Beletto",
+            "category": "bedroom",
+            "price": "$ 440,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Beletto-1.png",
+            "description": "Wooden Nightstand",
+            "imageUrl": [
+                "../assets/images/bedroom/Beletto-1.png",
+                "../assets/images/bedroom/Beletto-2.png",
+                "../assets/images/bedroom/Beletto-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 10,
+            "name": "Childretto",
+            "category": "bedroom",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Childretto-1.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Childretto-1.png",
+                "../assets/images/bedroom/Childretto-2.png",
+                "../assets/images/bedroom/Childretto-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 11,
+            "name": "Rumstando",
+            "category": "bedroom",
+            "price": "$ 550.00",
+            "discount": "$ 700.00",
+            "image": "../assets/images/bedroom/Rumstando-1.png",
+            "description": "White Nightstand",
+            "imageUrl": [
+                "../assets/images/bedroom/Rumstando-1.png",
+                "../assets/images/bedroom/Rumstando-2.png",
+                "../assets/images/bedroom/Rumstando-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 12,
+            "name": "Kitchenetto",
+            "category": "dining-room",
+            "price": "$ 400.00",
+            "discount": "$ 600.00",
+            "image": "../assets/images/dining-room/Kitchenetto-1.png",
+            "description": "Club Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Kitchenetto-1.png",
+                "../assets/images/dining-room/Kitchenetto-2.png",
+                "../assets/images/dining-room/Kitchenetto-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 13,
+            "name": "Lambeto",
+            "category": "dining-room",
+            "price": "$ 400.00",
+            "discount": "$ 560.00",
+            "image": "../assets/images/dining-room/Lambeto.png",
+            "description": "Dining Table Lamp",
+            "imageUrl": [
+                "../assets/images/dining-room/Lambeto.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 14,
+            "name": "Trapezaretto",
+            "category": "dining-room",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Trapezaretto-1.png",
+            "description": "Green Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Trapezaretto-1.png",
+                "../assets/images/dining-room/Trapezaretto-2.png",
+                "../assets/images/dining-room/Trapezaretto-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 15,
+            "name": "Rico-Ottoman",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico-Ottoman.png",
+            "description": "Nice Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Rico-Ottoman.png",
+                "../assets/images/living-room/Rico-Ottoman-2.png",
+                "../assets/images/living-room/Rico-Ottoman-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 16,
+            "name": "Rico-2",
+            "category": "living-room",
+            "price": "$ 600,000",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico-2.png",
+            "description": "Good Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Rico-2.png",
+                "../assets/images/living-room/Rico-2-2.png",
+                "../assets/images/living-room/Rico-2-3.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 17,
+            "name": "Catena-1",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Catena-1.png",
+            "description": "Confortable Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Catena-1.png",
+                "../assets/images/living-room/Catena-1-2.png",
+                "../assets/images/living-room/Catena-1-3.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": false
+        },
+        {
+            "id": 18,
+            "name": "Catena-2",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Catena-2.png",
+            "description": "Foam Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Catena-2.png",
+                "../assets/images/living-room/Catena-2-2.png",
+                "../assets/images/living-room/Catena-2-3.png"
+            ],
+            "stock": 5,
+            "IsMostPopular": false
+        },
+        {
+            "id": 19,
+            "name": "Sand/black",
+            "category": "living-room",
+            "price": "$ 270.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Sandblack.png",
+            "description": "Black and White Sofa",
+            "imageUrl": [
+                "../assets/images/living-room/Sandblack.png",
+                "../assets/images/living-room/Sandblack-2.png",
+                "../assets/images/living-room/Sandblack-3.png"
+            ],
+            "stock": 3,
+            "IsMostPopular": false
+        },
+        {
+            "id": 20,
+            "name": "Nesten-Lounge-Chair",
+            "category": "living-room",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Nesten-Lounge-Chair.png",
+            "description": "Soft Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Nesten-Lounge-Chair.png",
+                "../assets/images/living-room/Nesten-Lounge-Chair-2.png",
+                "../assets/images/living-room/Nesten-Lounge-Chair-3.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": true
+        },
+        {
+            "id": 21,
+            "name": "Buur-Lounge-Chair",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": "$ 480.00",
+            "image": "../assets/images/living-room/Buur-Lounge-Chair.png",
+            "description": "Soft Green Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Buur-Lounge-Chair.png",
+                "../assets/images/living-room/Buur-Lounge-Chair-2.png",
+                "../assets/images/living-room/Buur-Lounge-Chair-3.png"
+            ],
+            "stock": 3,
+            "IsMostPopular": true
+        },
+        {
+            "id": 22,
+            "name": "Rouli-Center-Module",
+            "category": "living-room",
+            "price": "$ 300.00",
+            "discount": "$ 560.00",
+            "image": "../assets/images/living-room/Rouli-Center-Module.png",
+            "description": "Soft Green Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Rouli-Center-Module.png",
+                "../assets/images/living-room/Rouli-Center-Module-2.png",
+                "../assets/images/living-room/Rouli-Center-Module-3.png"
+            ],
+            "stock": 31,
+            "IsMostPopular": false
+        },
+        {
+            "id": 23,
+            "name": "Rico",
+            "category": "living-room",
+            "price": "$ 400.00",
+            "discount": null,
+            "image": "../assets/images/living-room/Rico.png",
+            "description": "Soft Chair",
+            "imageUrl": [
+                "../assets/images/living-room/Rico.png",
+                "../assets/images/living-room/Rico-1.png",
+                "../assets/images/living-room/Rico-3.png"
+            ],
+            "stock": 2,
+            "IsMostPopular": false
+        },
+        {
+            "id": 24,
+            "name": "Wooden",
+            "category": "dining-room",
+            "price": "$ 400.00",
+            "discount": "$ 590.00",
+            "image": "../assets/images/dining-room/Wooden.png",
+            "description": "Dining Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Wooden.png",
+                "../assets/images/dining-room/Wooden-2.png",
+                "../assets/images/dining-room/Wooden-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 25,
+            "name": "Black-widow",
+            "category": "dining-room",
+            "price": "$ 400,000",
+            "discount": "$ 670,000",
+            "image": "../assets/images/dining-room/Black-widow.png",
+            "description": "Dining Black Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Black-widow.png",
+                "../assets/images/dining-room/Black-widow-2.png",
+                "../assets/images/dining-room/Black-widow-3.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 26,
+            "name": "Elegant",
+            "category": "dining-room",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Elegant.png",
+            "description": "Dining Good Chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Elegant.png",
+                "../assets/images/dining-room/Elegant-2.png",
+                "../assets/images/dining-room/Elegant-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 27,
+            "name": "Sandblack",
+            "category": "dining-room",
+            "price": "$ 150.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Sandblack.png",
+            "description": "Black and white chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Sandblack.png",
+                 "../assets/images/dining-room/Sandblack-2.png",
+                  "../assets/images/dining-room/Sandblack-3.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": false
+        },
+        {
+            "id": 28,
+            "name": "Rico",
+            "category": "dining-room",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Rico.png",
+            "description": "Elegant chair",
+            "imageUrl": [
+                "../assets/images/dining-room/Rico.png",
+                "../assets/images/dining-room/Rico-2.png",
+                "../assets/images/dining-room/Rico-3.png"
+            ],
+            "stock": 10,
+            "IsMostPopular": false
+        },
+        {
+            "id": 29,
+            "name": "Aukko ",
+            "category": "dining-room",
+            "price": "$ 240.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Aukko.png",
+            "description": "Wooden Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Aukko.png",
+                "../assets/images/dining-room/Aukko-2.png",
+                "../assets/images/dining-room/Aukko-3.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": false
+        },
+        {
+            "id": 30,
+            "name": "Oar Coffee",
+            "category": "dining-room",
+            "price": "$ 300.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/OarCoffee.png",
+            "description": "Wooden Dining Table",
+            "imageUrl": [
+                "../assets/images/dining-room/OarCoffee.png",
+                "../assets/images/dining-room/OarCoffee-2.png",
+                "../assets/images/dining-room/OarCoffee-3.png"
+            ],
+            "stock": 13,
+            "IsMostPopular": false
+        },
+        {
+            "id": 31,
+            "name": "Burl-Coffee",
+            "category": "dining-room",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Burl-Coffee-1.png",
+            "description": "Good Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Burl-Coffee-1.png",
+                "../assets/images/dining-room/Burl-Coffee-2.png",
+                "../assets/images/dining-room/Burl-Coffee-3.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": false
+        },
+        {
+            "id": 32,
+            "name": "Staffa-Coffee",
+            "category": "dining-room",
+            "price": "$ 200,000",
+            "discount": null,
+            "image": "../assets/images/dining-room/Staffa-Coffee.png",
+            "description": "Coffe Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Staffa-Coffee.png",
+                "../assets/images/dining-room/Staffa-Coffee-2.png",
+                "../assets/images/dining-room/Staffa-Coffee-3.png"
+            ],
+            "stock": 10,
+            "IsMostPopular": true
+        },
+        {
+            "id": 33,
+            "name": "Pylo-Console",
+            "category": "dining-room",
+            "price": "$ 340.00",
+            "discount": null,
+            "image": "../assets/images/dining-room/Pylo-Console.png",
+            "description": "Small Table",
+            "imageUrl": [
+                "../assets/images/dining-room/Pylo-Console.png",
+                "../assets/images/dining-room/Pylo-Console-2.png",
+                "../assets/images/dining-room/Pylo-Console-3.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": true
+        },
+        {
+            "id": 34,
+            "name": "Tarva",
+            "category": "bedroom",
+            "price": "$ 220.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Tarva.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Tarva.png",
+                "../assets/images/bedroom/Tarva-2.png",
+                "../assets/images/bedroom/Tarva-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 35,
+            "name": "Malm",
+            "category": "bedroom",
+            "price": "$ 180.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Malm.png",
+            "description": "Children's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Malm.png",
+                "../assets/images/bedroom/Malm-2.png",
+                "../assets/images/bedroom/Malm-3.png"
+            ],
+            "stock": 42,
+            "IsMostPopular": false
+        },
+        {
+            "id": 36,
+            "name": "Retro",
+            "category": "bedroom",
+            "price": "$ 1100.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Retro.png",
+            "description": "King Size Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Retro.png",
+                "../assets/images/bedroom/Retro-2.png",
+                "../assets/images/bedroom/Retro-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 37,
+            "name": "Slatino",
+            "category": "bedroom",
+            "price": "$ 500,000",
+            "discount": null,
+            "image": "../assets/images/bedroom/Slatino-1.png",
+            "description": "Old Timer",
+            "imageUrl": [
+                "../assets/images/bedroom/Slatino-1.png",
+                "../assets/images/bedroom/Slatino-1.png",
+                "../assets/images/bedroom/Slatino-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 38,
+            "name": "Brimnes",
+            "category": "bedroom",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Brimnes.png",
+            "description": "Brimnes Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Brimnes.png",
+                "../assets/images/bedroom/Brimnes-2.png",
+                "../assets/images/bedroom/Brimnes-3.png"
+            ],
+            "stock": 1,
+            "IsMostPopular": true
+        },
+        {
+            "id": 39,
+            "name": "Nordli",
+            "category": "bedroom",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Nordli.png",
+            "description": "Nordli  Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Nordli.png",
+                "../assets/images/bedroom/Nordli-2.png",
+                "../assets/images/bedroom/Nordli-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 40,
+            "name": "Idanas",
+            "category": "bedroom",
+            "price": "$ 500.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Idanas.png",
+            "description": "Idanas Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Idanas.png",
+                "../assets/images/bedroom/Idanas-2.png",
+                "../assets/images/bedroom/Idanas-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": false
+        },
+        {
+            "id": 41,
+            "name": "Vitrina",
+            "category": "bedroom",
+            "price": "$ 200.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Vitrina.png",
+            "description": "Vitrina's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Vitrina.png",
+                "../assets/images/bedroom/Vitrina-2.png",
+                "../assets/images/bedroom/Vitrina-3.png"
+            ],
+            "stock": 4,
+            "IsMostPopular": true
+        },
+        {
+            "id": 42,
+            "name": "Talasi",
+            "category": "bedroom",
+            "price": "$ 660.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Talasi.png",
+            "description": "Talasi's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Talasi.png",
+                "../assets/images/bedroom/Talasi-2.png",
+                "../assets/images/bedroom/Talasi-3.png"
+            ],
+            "stock": 0,
+            "IsMostPopular": true
+        },
+        {
+            "id": 43,
+            "name": "Utaker",
+            "category": "bedroom",
+            "price": "$ 530.00",
+            "discount": null,
+            "image": "../assets/images/bedroom/Utaker.png",
+            "description": "Utaker's Bed",
+            "imageUrl": [
+                "../assets/images/bedroom/Utaker.png",
+                "../assets/images/bedroom/Utaker-2.png",
+                "../assets/images/bedroom/Utaker-3.png"
+            ],
+            "stock": 5,
+            "IsMostPopular": false
+        }
+    ]
+  }
+  
