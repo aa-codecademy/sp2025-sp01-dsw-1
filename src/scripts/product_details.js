@@ -7,7 +7,7 @@ init();
 
 
 async function fetchProducts() {
-    const response = await fetch("../src/assets/products.json");
+    const response = await fetch('../assets/products.json');
     const data = await response.json();
     return data.products;
 }
