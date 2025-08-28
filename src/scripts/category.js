@@ -119,7 +119,7 @@ function renderProducts(page) {
       }
       const productId = card.getAttribute("data-product-id");
       if (productId) {
-        window.location.href = `product_details.html?id=${productId}`;
+        window.location.href = `../../templates/product_details.html?id=${productId}`;
       }
     });
   });
@@ -219,7 +219,7 @@ function getCategoryFromUrl() {
   return params.get("category");
 }
 
-fetch("../assets/products.json")
+fetch("../src/assets/products.json")
   .then((response) => response.json())
   .then((data) => {
     allProducts = data.products;

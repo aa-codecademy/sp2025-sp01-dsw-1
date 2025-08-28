@@ -6,7 +6,7 @@ import { init } from './search-utils.js';
 init();
 
 async function fetchProducts() {
-  const response = await fetch("../assets/products.json");
+  const response = await fetch("../src/assets/products.json");
   const data = await response.json();
   return data.products;
 }
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const checkoutBtn = document.querySelector(".checkout-btn");
   if (checkoutBtn && checkoutBtn.tagName === "BUTTON") {
     checkoutBtn.addEventListener("click", () => {
-      window.location.href = "checkout.html";
+      window.location.href = "../../templates/checkout.html";
     });
   }
 });

@@ -96,7 +96,7 @@ function renderProductCards(products, gridElement) {
       }
       const productId = card.getAttribute("data-product-id");
       if (productId) {
-        window.location.href = `product_details.html?id=${productId}`;
+        window.location.href = `../../templates/product_details.html?id=${productId}`;
       }
     });
   });
@@ -104,7 +104,7 @@ function renderProductCards(products, gridElement) {
   attachAddToCartListeners(products, gridElement);
 }
 
-fetch("../assets/products.json")
+fetch("/src/assets/products.json")
   .then((response) => response.json())
   .then((data) => {
     const products = data.products;

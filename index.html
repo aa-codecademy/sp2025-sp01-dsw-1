@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Shop</title>
+    <link rel="stylesheet" href="./src/styles/homepage.css" />
+    <link rel="stylesheet" href="./src/styles/header.css" />
+    <link rel="stylesheet" href="./src/styles/footer.css" />
+  </head>
+  <body>
+    <main>
+      <section class="banner">
+        <div class="banner-content">
+          <div class="banner-image">
+            <img src="./src/assets/banner_image.png" alt="Furniture Banner" />
+          </div>
+          <div class="banner-text-container">
+            <div class="banner-text">
+              <p class="banner-subtitle">New Arrival</p>
+              <h1 class="banner-title">Discover Our New Collection</h1>
+              <p class="banner-description">
+                Elevate your home with our latest furniture arrivals—crafted for
+                comfort, style, and lasting quality. Discover pieces that
+                transform every room into a space you love.
+              </p>
+              <a class="banner-button" href="/templates/category.html"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="categories">
+        <h2 class="section-title">Categories</h2>
+        <div class="categories-container">
+          <div class="category-item">
+            <a
+              href="/templates/category.html?category=dining-room#products-section"
+            >
+              <img
+                src="./src/assets/images/Dining-room.png"
+                alt="Dining"
+                class="category-image"
+              />
+              <p class="category-name">Dining</p>
+            </a>
+          </div>
+          <div class="category-item">
+            <a
+              href="/templates/category.html?category=living-room#products-section"
+            >
+              <img
+                src="./src/assets/images/Living-room.png"
+                alt="Living"
+                class="category-image"
+              />
+              <p class="category-name">Living</p>
+            </a>
+          </div>
+          <div class="category-item">
+            <a
+              href="/templates/category.html?category=bedroom#products-section"
+            >
+              <img
+                src="./src/assets/images/Bedroom.png"
+                alt="Bedroom"
+                class="category-image"
+              />
+              <p class="category-name">Bedroom</p>
+            </a>
+          </div>
+        </div>
+        <div class="category-products-grid"></div>
+      </section>
+      <section class="most-popular">
+        <h2 class="section-title">Most Popular</h2>
+        <div class="most-popular-grid"></div>
+      </section>
+    </main>
+    <script type="module" src="./src/scripts/homepage.js"></script>
+  </body>
+</html>
