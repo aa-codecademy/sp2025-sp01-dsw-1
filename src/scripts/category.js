@@ -219,7 +219,7 @@ function getCategoryFromUrl() {
   return params.get("category");
 }
 
-fetch("../assets/products.json")
+fetch("../../products.json")
   .then((response) => response.json())
   .then((data) => {
     allProducts = data.products;

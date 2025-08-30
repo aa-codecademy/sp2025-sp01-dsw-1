@@ -104,7 +104,7 @@ function renderProductCards(products, gridElement) {
   attachAddToCartListeners(products, gridElement);
 }
 
-fetch("../assets/products.json")
+fetch("../../products.json")
   .then((response) => response.json())
   .then((data) => {
     const products = data.products;
