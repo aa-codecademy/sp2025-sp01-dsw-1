@@ -85,7 +85,7 @@ export function setupSearch(products) {
       li.appendChild(img);
       li.appendChild(name);
       li.addEventListener("click", () => {
-        window.location.href = `/src/templates/product_details.html?id=${product.id}`;
+        window.location.href = `product_details.html?id=${product.id}`;
       });
 
       suggestionBox.appendChild(li);
@@ -101,10 +101,10 @@ export function setupSearch(products) {
   });
 }
 export async function init() {
-  await loadHTML("../templates/header.html", "afterbegin");
-  await loadHTML("../templates/footer.html", "beforeend");
+  await loadHTML("header.html", "afterbegin");
+  await loadHTML("footer.html", "beforeend");
 
-  const response = await fetch("/src/assets/products.json");
+  const response = await fetch("../../products.json");
   const data = await response.json();
   const products = data.products;
 

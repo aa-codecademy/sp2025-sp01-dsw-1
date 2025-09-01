@@ -6,7 +6,7 @@ import { init } from './search-utils.js';
 init();
 
 async function fetchProducts() {
-  const response = await fetch("../assets/products.json");
+  const response = await fetch("../../products.json");
   const data = await response.json();
   return data.products;
 }
